@@ -1,18 +1,12 @@
-" ---------------------------------------------
-" defx
-" ---------------------------------------------
-
 " Open and Close
 nnoremap <silent> <leader>f :<C-U>:Defx -buffer_name=explorer -resume -winwidth=35 -split=vertical `expand('%:p:h')` -search=`expand('%:p')`<CR>
-nnoremap <silent> - :<C-U>:Defx -buffer_name=defx<CR>
 
 augroup defx_config
   autocmd!
-  autocmd VimEnter * call s:InitializeDefx()
+  autocmd BufEnter * call s:InitializeDefx()
   autocmd FileType defx call s:EnterDefxFiler()
   autocmd BufWritePost * call defx#redraw()
 augroup END
-
 
 "============================================================
 function! s:InitializeDefx() abort
@@ -32,8 +26,8 @@ function! s:InitializeDefx() abort
   \ 'Deleted'   : 'D',
   \ 'Unknown'   : '?'
   \})
-  call s:OpenDefxIfDirectory()
   call defx#redraw()
+  call s:OpenDefxIfDirectory()
 endfunction
 
 "============================================================
@@ -86,3 +80,4 @@ function! s:OpenDefxIfDirectory()
     execute "Defx `expand('%:p')` | bd " . expand('%:r')
   endif
 endfunction
+

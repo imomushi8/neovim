@@ -1,9 +1,11 @@
 augroup ddu_config
   autocmd!
-  autocmd VimEnter call s:InitializeDDU()
+  autocmd BufEnter * call s:InitializeDDU()
   autocmd FileType ddu-ff call s:ddu_my_settings()
   " autocmd FileType ddu-ff-filter call s:ddu_filter_my_settings()
 augroup END
+
+
 
 function! s:InitializeDDU() abort
   call ddu#custom#patch_global({

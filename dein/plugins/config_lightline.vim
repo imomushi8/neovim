@@ -7,7 +7,7 @@ let g:lightline = {
         \ 'mode_map': {'c': 'NORMAL'},
         \ 'active': {
         \   'left': [ ['mode', 'paste'],
-        \             ['readonly', 'modified', 'filetype'],
+        \             ['filetype', 'filestatus'],
         \             ['fugitive']
         \   ],
         \   'right': [ ['fileencoding', 'fileformat'],
@@ -18,51 +18,44 @@ let g:lightline = {
         \     'lineinfo': '[R:%3l/%L][C:%2v]'
         \ },
         \ 'component_function': {
-        \   'readonly':     'LightlineReadonly',
-        \   'modified':     'LightlineModified',
         \   'mode':         'LightLineMode',
+        \   'filetype':     'LightlineFiletype',
+        \   'filestatus':   'LightlineFileStatus',
         \   'filename':     'LightlineFilename',
+        \   'fileformat':   'LightlineFileformat',
+        \   'fileencoding': 'LightlineFileencoding',
         \   'fugitive':     'LightlineFugitive',
         \   'gitgutter':    'LightlineGitGutter',
         \   'charcode':     'LightlineCharCode',
-        \   'fileformat':   'LightlineFileformat',
-        \   'fileencoding': 'LightlineFileencoding',
-        \   'filetype':     'LightlineFiletype',
         \ },
         \}
 
-function! LightlineFileformat()
-  return winwidth('.') > 50 ? &fileformat : ''
+function! LightLineMode()
+  return &filetype =~ 'help\|defx\|exploler' ? '' : lightline#mode()
 endfunction
 
 function! LightlineFiletype()
-  return winwidth('.') > 50 ? (&filetype !=# '' ? &filetype : 'No FileType') : ''
+  return &filetype !=# '' ? &filetype : 'No FileType'
+endfunction
+
+function! LightlineFileStatus()
+  return &modified ? '[+]' : &modifiable ? '[ ]' : '[-]'
+endfunction
+
+function! LightlineFilename()
+  return '' != expand('%:t') ? expand('%:t') : '[No Name]'
+endfunction
+
+function! LightlineFileformat()
+  return winwidth('.') > 50 ? &fileformat : ''
 endfunction
 
 function! LightlineFileencoding()
   return winwidth('.') > 50 ? (&fenc !=# '' ? &fenc : &enc) : ''
 endfunction
 
-function! LightLineMode()
-  return winwidth(0) > 50 ? lightline#mode() : ''
-endfunction
-
-function! LightlineReadonly()
-  return &ft !~? 'help\|defx\|exploler' && &readonly ? '[RO]' : ''
-endfunction
-
-function! LightlineModified()
-  return &ft =~ 'help\|defx\|exploler' ? '' : &modified ? '[+]' : &modifiable ? '' : '[-]'
-endfunction
-
-function! LightlineFilename()
-  return ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
-        \ ('' != LightlineModified() ? ' ' . LightlineModified() : '') .
-        \ ('' != expand('%:t') ? expand('%:t') : '[No Name]')
-endfunction
-
 function! LightLineFugitive()
-  return winwidth('.') > 50 ? FugitiveStatusline() : ''
+  return winwidth('.') > 50 ? FugitiveHead() : ''
 endfunction
 
 function! LightlineGitGutter()
