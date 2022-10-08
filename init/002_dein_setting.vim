@@ -1,7 +1,7 @@
-"dein.vim settings {{{
-" install dir {{{
-let s:dein_dir = expand('~/.cache/dein')
+" directory variables {{{
+let s:dein_dir      = expand('~/.cache/dein')
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+let s:rc_dir        = expand('~/AppData/Local/nvim/dein')
 " }}}
 
 " dein installation check {{{
@@ -18,11 +18,10 @@ if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
 
   " .toml file
-  let s:rc_dir = expand('~/AppData/Local/nvim/dein')
   if !isdirectory(s:rc_dir)
     call mkdir(s:rc_dir, 'p')
   endif
-  let s:toml = s:rc_dir . '/dein.toml'
+  let s:toml      = s:rc_dir . '/dein.toml'
   let s:lazy_toml = s:rc_dir . '/dein_lazy.toml'
 
   " read toml and cache
