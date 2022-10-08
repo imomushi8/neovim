@@ -1,0 +1,113 @@
+###################################################
+# Dependency
+###################################################
+
+[[plugins]]
+repo = 'nvim-lua/plenary.nvim'
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
+[[plugins]]
+repo = 'kyazdani42/nvim-web-devicons'
+
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+
+###################################################
+# Utility
+###################################################
+[[plugins]]
+repo = 'airblade/vim-gitgutter' 
+hook_add = 'source ~/AppData/Local/nvim/dein/plugins/config_gitgutter.vim'
+
+[[plugins]]
+repo = 'akinsho/toggleterm.nvim'
+hook_add = 'source ~/AppData/Local/nvim/dein/plugins/config_toggleterm.vim'
+
+[[plugins]]
+repo = 'bkad/CamelCaseMotion'
+hook_add = 'source ~/AppData/Local/nvim/dein/plugins/config_CamelCaseMotion.vim'
+
+[[plugins]]
+repo = 'jiangmiao/auto-pairs'
+
+[[plugins]]
+repo = 'rhysd/clever-f.vim'
+
+[[plugins]]
+repo = 'stevearc/aerial.nvim'
+hook_add = 'source ~/AppData/Local/nvim/dein/plugins/config_aerial.lua'
+
+[[plugins]]
+repo = 'tpope/vim-repeat'
+
+[[plugins]]
+repo = 'tpope/vim-commentary'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'unblevable/quick-scope'
+
+
+###################################################
+# Visualization
+###################################################
+# Status Line
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = 'source ~/AppData/Local/nvim/dein/plugins/config_lightline.vim'
+
+# Buffer Line
+[[plugins]]
+repo = 'romgrk/barbar.nvim'
+hook_add = 'source ~/AppData/Local/nvim/dein/plugins/config_barbar.vim'
+
+# Scroll Bar
+[[plugins]]
+repo = 'petertriho/nvim-scrollbar'
+hook_add = 'source ~/AppData/Local/nvim/dein/plugins/config_nvim-scrollbar.lua'
+
+# ColorScheme
+[[plugins]]
+repo = 'folke/tokyonight.nvim'
+hook_add = 'source ~/AppData/Local/nvim/dein/plugins/config_tokyonight.lua'
+
+# Indent Support
+[[plugins]]
+repo = 'lukas-reineke/indent-blankline.nvim'
+hook_add = 'source ~/AppData/Local/nvim/dein/plugins/config_indent-blankline.lua'
+
+# TODO Coloring
+[[plugins]]
+repo = 'folke/todo-comments.nvim'
+
+# LSP GUI
+
+
+###################################################
+# Search And Replacement Support
+###################################################
+[[plugins]]
+repo = 'kevinhwang91/nvim-hlslens'
+
+[[plugins]]
+repo = 't9md/vim-quickhl'
+
+[[plugins]]
+repo = 'markonm/traces.vim'
+
+
+###################################################
+# エラー一覧
+###################################################
+[[plugins]]
+repo = 'folke/trouble.nvim'
+depends = ['nvim-web-devicons']
+hook_add = 'source ~/AppData/Local/nvim/dein/plugins/config_trouble.vim'
+
