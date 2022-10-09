@@ -18,6 +18,10 @@ repo = 'nvim-treesitter/nvim-treesitter'
 # Utility
 ###################################################
 [[plugins]]
+repo = 'airblade/vim-rooter'
+hook_add = 'source ~/AppData/Local/nvim/dein/plugins/config_vim-rooter.vim'
+
+[[plugins]]
 repo = 'airblade/vim-gitgutter' 
 hook_add = 'source ~/AppData/Local/nvim/dein/plugins/config_gitgutter.vim'
 

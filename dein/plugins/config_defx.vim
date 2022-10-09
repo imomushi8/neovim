@@ -59,8 +59,7 @@ function! s:EnterDefxFiler() abort
 
   nnoremap <silent><buffer><expr> yy      defx#do_action('yank_path')
   nnoremap <silent><buffer><expr> x       defx#do_action('execute_system')
-  nnoremap <silent><buffer><expr> .       defx#do_action('toggle_ignored_files')
-  nnoremap <silent><buffer><expr> <Space> defx#do_action('toggle_select') . 'j'
+  nnoremap <silent><buffer><expr> .       defx#do_action('toggle_select') . 'j'
   nnoremap <silent><buffer><expr> *       defx#do_action('toggle_select_all')
   
   nnoremap <silent><buffer><expr> > defx#do_action('resize', defx#get_context().winwidth + 5)

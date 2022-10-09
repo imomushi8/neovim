@@ -46,35 +46,42 @@ hook_source = 'source ~/AppData/Local/nvim/dein/plugins/config_ddu.vim'
 [[plugins]]
 repo = 'Shougo/ddu-ui-filer'
 on_source = 'ddu.vim'
+depends = ['ddu.vim']
 
 ###### ui(fuzzy finder) ######
-[[plugin]]
+[[plugins]]
 repo = 'Shougo/ddu-ui-ff'
 on_source = 'ddu.vim'
+depends = ['ddu.vim']
 
 ###### matcher ######
 [[plugins]]
 repo = 'Shougo/ddu-filter-matcher_substring'
 on_source = 'ddu.vim'
+depends = ['ddu.vim']
 
 ###### kind ######
 [[plugins]]
 repo = 'Shougo/ddu-kind-file'
 on_source = 'ddu.vim'
+depends = ['ddu.vim']
 
 ###### source ######
 [[plugins]]
 repo = 'Shougo/ddu-source-file'
 on_source = 'ddu.vim'
+depends = ['ddu.vim']
 
 [[plugins]]
 repo = 'Shougo/ddu-source-file_rec'
 on_source = 'ddu-kind-file'
+depends = ['ddu.vim']
 
 ###### column ######
 [[plugins]]
 repo = 'ryota2357/ddu-column-icon_filename'
 on_source = 'ddu.vim'
+depends = ['ddu.vim']
 
 
 ###################################################

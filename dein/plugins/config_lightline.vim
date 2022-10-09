@@ -7,8 +7,7 @@ let g:lightline = {
         \ 'mode_map': {'c': 'NORMAL'},
         \ 'active': {
         \   'left': [ ['mode', 'paste'],
-        \             ['filetype', 'filestatus'],
-        \             ['fugitive']
+        \             ['filetype', 'filestatus', 'fugitive'],
         \   ],
         \   'right': [ ['fileencoding', 'fileformat'],
         \              ['lineinfo'],
@@ -39,7 +38,8 @@ function! LightlineFiletype()
 endfunction
 
 function! LightlineFileStatus()
-  return &modified ? '[+]' : &modifiable ? '[ ]' : '[-]'
+  return  (&readonly ? 'r' : '-') . (&modifiable ? 'w' : '-')
+
 endfunction
 
 function! LightlineFilename()
