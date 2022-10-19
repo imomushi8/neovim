@@ -74,14 +74,11 @@ tnoremap <Esc> <C-\><C-n>
 "--------------------------------
 nnoremap <silent> ga    <cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> gds   <cmd>lua vim.lsp.buf.document_symbol()<CR>
+nnoremap <silent> gs    <cmd>lua vim.lsp.buf.document_symbol()<CR>
 nnoremap <silent> gi    <cmd>lua vim.lsp.buf.implementation()<CR>
 nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> gR    <cmd>lua vim.lsp.buf.rename()<CR>
-nnoremap <silent> gh    <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <silent> gws   <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
-nnoremap <silent> gp    <cmd>lua vim.lsp.diagnostic.goto_prev { wrap = false }<CR>
-nnoremap <silent> gn    <cmd>lua vim.lsp.diagnostic.goto_next { wrap = false }<CR>
-nnoremap <silent> gs    <cmd>lua vim.lsp.diagnostic.set_loclist()<CR>
-nnoremap <silent> <A-l> <cmd>lua vim.lsp.buf.formatting()<CR>
+nnoremap <silent> gw    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
+nnoremap <silent> gl    <cmd>lua vim.diagnostic.open_float(0, {scope="line"})<CR>
+nnoremap <silent> <A-l> <cmd>lua vim.lsp.buf.format { async = true }<CR>
 nnoremap <silent> <A-h> <cmd>lua vim.lsp.buf.signature_help()<CR>
