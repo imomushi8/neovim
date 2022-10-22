@@ -70,28 +70,30 @@ hook_add = 'source ~/AppData/Local/nvim/dein/plugins/config_lightline.vim'
 # Buffer Line
 [[plugins]]
 repo = 'romgrk/barbar.nvim'
+if = '!exists("g:vscode")'
 hook_add = 'source ~/AppData/Local/nvim/dein/plugins/config_barbar.vim'
 
 # Scroll Bar
 [[plugins]]
 repo = 'petertriho/nvim-scrollbar'
+if = '!exists("g:vscode")'
 hook_add = 'source ~/AppData/Local/nvim/dein/plugins/config_nvim-scrollbar.lua'
 
 # ColorScheme
 [[plugins]]
 repo = 'folke/tokyonight.nvim'
+if = '!exists("g:vscode")'
 hook_add = 'source ~/AppData/Local/nvim/dein/plugins/config_tokyonight.lua'
 
 # Indent Support
 [[plugins]]
 repo = 'lukas-reineke/indent-blankline.nvim'
+if = '!exists("g:vscode")'
 hook_add = 'source ~/AppData/Local/nvim/dein/plugins/config_indent-blankline.lua'
 
 # TODO Coloring
 [[plugins]]
 repo = 'folke/todo-comments.nvim'
-
-# LSP GUI
 
 
 ###################################################

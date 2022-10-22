@@ -4,6 +4,7 @@
 
 [[plugins]]
 repo = 'Shougo/defx.nvim'
+if = '!exists("g:vscode")'
 on_event = 'BufEnter'
 hook_source = 'source ~/AppData/Local/nvim/dein/plugins/config_defx.vim'
 
@@ -22,6 +23,7 @@ on_source = 'defx.nvim'
 
 [[plugins]]
 repo = 'vim-denops/denops.vim'
+if = '!exists("g:vscode")'
 on_event = 'BufEnter'
 
 [[plugins]]
@@ -150,5 +152,6 @@ hook_source = 'source ~/AppData/Local/nvim/dein/plugins/config_nvim-lspconfig.lu
 
 [[plugins]]
 repo = 'scalameta/nvim-metals'
+if = '!exists("g:vscode")'
 on_ft = 'scala'
 hook_source = 'source ~/AppData/Local/nvim/dein/plugins/config_nvim-metals.vim'

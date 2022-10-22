@@ -1,9 +1,9 @@
-"=================================================================================
 "--------------------------------
 " OS Setting
 "--------------------------------
 if has('win64')
-"
+  " set shell="C:\Program Files\PowerShell\7\pwsh.exe"
+
   " Windowsのときは<CR+LF>を最優先する
   set fileformats=dos,unix,mac
   if !empty(system('where /Q python && echo has'))
@@ -74,8 +74,7 @@ set completeopt=menuone,noinsert,noselect
 "--------------------------------
 " Command Line Setting
 "--------------------------------
-" This is disabled when using Shougo/pum.vim
+" This must disabled when using Shougo/pum.vim
 " set wildmode=list:longest
 " set wildoptions=pum
-
 
