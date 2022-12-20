@@ -1,5 +1,5 @@
 " Default settings
-let g:rooter_targets = '*.scala,*.py,*.c,*.cpp,*.vim,*.lua'
+let g:rooter_targets = '*.scala,*.sbt,*.py,*.c,*.cpp,*.vim,*.lua'
 let g:rooter_manual_only = 0
 let g:rooter_change_directory_for_non_project_files = 'current'
 

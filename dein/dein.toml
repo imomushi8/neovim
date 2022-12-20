@@ -34,6 +34,14 @@ repo = 'bkad/CamelCaseMotion'
 hook_add = 'source ~/AppData/Local/nvim/dein/plugins/config_CamelCaseMotion.vim'
 
 [[plugins]]
+repo = 'famiu/bufdelete.nvim'
+hook_add = 'source ~/AppData/Local/nvim/dein/plugins/config_bufdelete.vim'
+
+[[plugins]]
+repo = 'haya14busa/vim-edgemotion'
+hook_add = 'source ~/AppData/Local/nvim/dein/plugins/config_vim-edgemotion.vim'
+
+[[plugins]]
 repo = 'jiangmiao/auto-pairs'
 
 [[plugins]]

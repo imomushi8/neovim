@@ -50,6 +50,10 @@ set wrapscan
 set incsearch
 set hlsearch
 
+" Japanese support
+set ttimeout
+set ttimeoutlen=50
+
 "--------------------------------
 " Visual Setting
 "--------------------------------
