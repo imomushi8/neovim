@@ -1,4 +1,3 @@
-
 " Open as Fuzzy Finder
 nnoremap <silent><expr> ;f <SID>startDDUForFF()
 
@@ -43,6 +42,9 @@ function! s:startDDUForFF() abort
   \   '_': {
   \     'matchers': ['matcher_substring'],
   \     'columns': ['icon_filename'],
+  \   },
+  \   'file_rec': { 
+  \     'path': expand('%:p:h')
   \   },
   \ },
   \ 'kindOptions': {

@@ -1,33 +1,49 @@
 let g:lightline = {
-        \ 'enable': {
-        \   'statusline': 1, 
-        \   'tabline': 0
-        \ },
-        \ 'colorscheme': 'tokyonight',
-        \ 'mode_map': {'c': 'NORMAL'},
-        \ 'active': {
-        \   'left': [ ['mode', 'paste'],
-        \             ['filetype', 'filestatus', 'fugitive'],
-        \   ],
-        \   'right': [ ['fileencoding', 'fileformat'],
-        \              ['lineinfo'],
-        \   ],
-        \ },
-        \  'component': {
-        \     'lineinfo': '[R:%3l/%L][C:%2v]'
-        \ },
-        \ 'component_function': {
-        \   'mode':         'LightLineMode',
-        \   'filetype':     'LightlineFiletype',
-        \   'filestatus':   'LightlineFileStatus',
-        \   'filename':     'LightlineFilename',
-        \   'fileformat':   'LightlineFileformat',
-        \   'fileencoding': 'LightlineFileencoding',
-        \   'fugitive':     'LightlineFugitive',
-        \   'gitgutter':    'LightlineGitGutter',
-        \   'charcode':     'LightlineCharCode',
-        \ },
-        \}
+\ 'enable': {
+\   'statusline': 1, 
+\   'tabline': 1,
+\ },
+\ 'colorscheme': 'catppuccin',
+\ 'mode_map': {'c': 'NORMAL'},
+\ 'active': {
+\   'left': [ ['mode', 'paste'],
+\             ['filetype', 'filestatus', 'fugitive'],
+\   ],
+\   'right': [ ['fileencoding', 'fileformat'],
+\              ['lineinfo'],
+\   ],
+\ },
+\  'component': {
+\     'lineinfo': '[R:%3l/%L][C:%2v]'
+\ },
+\ 'component_function': {
+\   'mode':         'LightLineMode',
+\   'filetype':     'LightlineFiletype',
+\   'filestatus':   'LightlineFileStatus',
+\   'filename':     'LightlineFilename',
+\   'fileformat':   'LightlineFileformat',
+\   'fileencoding': 'LightlineFileencoding',
+\   'fugitive':     'LightlineFugitive',
+\   'gitgutter':    'LightlineGitGutter',
+\   'charcode':     'LightlineCharCode',
+\ },
+\
+\ 'tabline': {
+\   'left': [ ['buffers'] ],
+\   'right': []
+\ },
+\ 'component_expand': {
+\   'buffers': 'lightline#bufferline#buffers'
+\ },
+\ 'component_type': {
+\   'buffers': 'tabsel'
+\ },
+\}
+
+" \ 'colorscheme': 'tokyonight',
+" \ 'colorscheme': 'catppuccin',
+
+let g:lightline#bufferline#enable_devicons = 1
 
 function! LightLineMode()
   return &filetype =~ 'help\|defx\|exploler' ? '' : lightline#mode()

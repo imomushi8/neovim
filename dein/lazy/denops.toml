@@ -1,0 +1,17 @@
+###################################################
+# denops
+###################################################
+
+[[plugins]]
+repo = 'vim-denops/denops.vim'
+if = '!exists("g:vscode")'
+on_event = 'BufEnter'
+
+[[plugins]]
+repo = 'matsui54/denops-popup-preview.vim'
+on_source = 'denops.vim'
+
+[[plugins]]
+repo = 'matsui54/denops-signature_help'
+on_source = 'denops.vim'
+hook_source = 'source $VIM_DEIN/lazy/config/denops.vim'

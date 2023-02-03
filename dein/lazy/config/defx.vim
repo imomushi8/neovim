@@ -1,5 +1,11 @@
 " Open and Close
-nnoremap <silent> <leader>f :<C-U>:Defx -buffer_name=explorer -resume -winwidth=35 -split=vertical `expand('%:p:h')` -search=`expand('%:p')`<CR>
+nnoremap <silent> <leader>f :<C-U>:Defx 
+  \-buffer_name=explorer
+  \-resume 
+  \-winwidth=35 
+  \-split=vertical 
+  \`expand('%:p:h')` 
+  \-search=`expand('%:p')`<CR>
 
 augroup defx_config
   autocmd!

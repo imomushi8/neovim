@@ -17,16 +17,20 @@ endif
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
 
-  " .toml file
   if !isdirectory(s:rc_dir)
     call mkdir(s:rc_dir, 'p')
   endif
-  let s:toml      = s:rc_dir . '/dein.toml'
-  let s:lazy_toml = s:rc_dir . '/dein_lazy.toml'
+  
+  " read toml and cache as non-lazy
+  call dein#load_toml(s:rc_dir . '/utilities.toml',    {'lazy': 0})
+  call dein#load_toml(s:rc_dir . '/dependencies.toml', {'lazy': 0})
 
-  " read toml and cache
-  call dein#load_toml(s:toml, {'lazy': 0})
-  call dein#load_toml(s:lazy_toml, {'lazy' : 1})
+  " read toml and cache in rc_dir directory
+  let s:filelist = split(glob(s:rc_dir . '/lazy/*.toml'), "\n")
+  for file in s:filelist
+    call dein#load_toml(file, {'lazy': 1})
+  endfor
+
   " end settings
   call dein#end()
   call dein#save_state()

@@ -65,8 +65,9 @@ set showmatch
 set laststatus=2
 set list
 set listchars+=tab:\^\
-set listchars+=space:⋅
-set listchars+=eol:↴
+" set listchars+=space:⋅
+" set listchars+=eol:↴
+set showtabline=2
 syntax enable
 
 "--------------------------------

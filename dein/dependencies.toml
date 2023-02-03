@@ -1,0 +1,16 @@
+###################################################
+# Dependency
+###################################################
+
+[[plugins]]
+repo = 'nvim-lua/plenary.nvim'
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
+[[plugins]]
+repo = 'kyazdani42/nvim-web-devicons'
+
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+

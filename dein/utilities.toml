@@ -1,0 +1,103 @@
+###################################################
+# IDE Support
+###################################################
+# Status Line
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+if = '!exists("g:vscode")'
+hook_add = 'source $VIM_DEIN/config/lightline.vim'
+
+# Buffer Line
+[[plugins]]
+repo = 'mengelbrecht/lightline-bufferline'
+if = '!exists("g:vscode")'
+
+# Open/Close Terminal by command
+[[plugins]]
+repo = 'akinsho/toggleterm.nvim'
+hook_add = 'source $VIM_DEIN/config/toggleterm.vim'
+
+
+###################################################
+# Utility
+###################################################
+[[plugins]]
+repo = 'airblade/vim-gitgutter' 
+hook_add = 'source $VIM_DEIN/config/gitgutter.vim'
+
+[[plugins]]
+repo = 'airblade/vim-rooter'
+hook_add = 'source $VIM_DEIN/config/vim-rooter.vim'
+
+[[plugins]]
+repo = 'famiu/bufdelete.nvim'
+hook_add = 'source $VIM_DEIN/config/bufdelete.vim'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'tpope/vim-repeat'
+
+
+###################################################
+# Move Support
+###################################################
+[[plugins]]
+repo = 'bkad/CamelCaseMotion'
+hook_add = 'source $VIM_DEIN/config/CamelCaseMotion.vim'
+
+[[plugins]]
+repo = 'haya14busa/vim-edgemotion'
+hook_add = 'source $VIM_DEIN/config/vim-edgemotion.vim'
+
+[[plugins]]
+repo = 'rhysd/clever-f.vim'
+
+[[plugins]]
+repo = 'unblevable/quick-scope'
+
+
+###################################################
+# Input Support
+###################################################
+[[plugins]]
+repo = 'jiangmiao/auto-pairs'
+
+[[plugins]]
+repo = 'tpope/vim-commentary'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+
+###################################################
+# Search Support
+###################################################
+[[plugins]]
+repo = 'kevinhwang91/nvim-hlslens'
+
+[[plugins]]
+repo = 't9md/vim-quickhl'
+
+###################################################
+# Replacement Support
+###################################################
+[[plugins]]
+repo = 'markonm/traces.vim'
+
+
+###################################################
+# Visualization
+###################################################
+
+# Indent Support
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+if = '!exists("g:vscode")'
+hook_add = 'source $VIM_DEIN/config/indentLine.vim'
+
+# TODO Coloring
+[[plugins]]
+if = '!exists("g:vscode")'
+repo = 'folke/todo-comments.nvim'
