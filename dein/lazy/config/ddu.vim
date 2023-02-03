@@ -44,7 +44,7 @@ function! s:startDDUForFF() abort
   \     'columns': ['icon_filename'],
   \   },
   \   'file_rec': { 
-  \     'path': expand('%:p:h')
+  \     'path': getcwd()
   \   },
   \ },
   \ 'kindOptions': {

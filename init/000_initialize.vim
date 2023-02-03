@@ -2,7 +2,10 @@
 " OS Setting
 "--------------------------------
 if has('win64')
-  " set shell="C:\Program Files\PowerShell\7\pwsh.exe"
+  set shell=powershell
+  set shellcmdflag=-command
+  set shellquote=\"
+  set shellxquote=
 
   " Windowsのときは<CR+LF>を最優先する
   set fileformats=dos,unix,mac
@@ -63,11 +66,11 @@ set virtualedit=onemore
 set visualbell
 set showmatch
 set laststatus=2
+set showtabline=2
 set list
 set listchars+=tab:\^\
 " set listchars+=space:⋅
 " set listchars+=eol:↴
-set showtabline=2
 syntax enable
 
 "--------------------------------
