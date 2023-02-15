@@ -6,7 +6,6 @@
 [[plugins]]
 repo = 'catppuccin/nvim'
 if = '!exists("g:vscode")'
-# hook_source = 'source expand($MYVIMRC:h) . "/dein/lazy/config/catppuccin.lua"'
 hook_source = 'source $VIM_DEIN/lazy/config/catppuccin.lua'
 on_event = 'BufEnter'
 
@@ -14,7 +13,7 @@ on_event = 'BufEnter'
 # [[plugins]]
 # repo = 'folke/tokyonight.nvim'
 # if = '!exists("g:vscode")'
-# hook_source = 'source ~/AppData/Local/nvim/dein/lazy/config/tokyonight.lua'
+# hook_source = 'source $VIM_DEIN/lazy/config/tokyonight.lua'
 # on_event = 'BufEnter'
 
 # Scroll Bar

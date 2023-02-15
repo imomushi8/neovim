@@ -71,7 +71,9 @@ set list
 set listchars+=tab:\^\
 " set listchars+=space:⋅
 " set listchars+=eol:↴
+set guifont=JetBrainsMono\ Nerd\ Font\ Mono:h11
 syntax enable
+
 
 "--------------------------------
 " LSP Seting

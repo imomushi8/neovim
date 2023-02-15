@@ -94,7 +94,7 @@ repo = 'markonm/traces.vim'
 # Indent Support
 [[plugins]]
 repo = 'Yggdroot/indentLine'
-if = '!exists("g:vscode")'
+if = '!(exists("g:vscode") || exists("g:goneovim"))'
 hook_add = 'source $VIM_DEIN/config/indentLine.vim'
 
 # TODO Coloring
