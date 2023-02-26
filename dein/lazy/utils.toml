@@ -19,6 +19,7 @@ on_event = 'BufEnter'
 # Scroll Bar
 [[plugins]]
 repo = 'petertriho/nvim-scrollbar'
+# if = '!(exists("g:vscode") || exists("g:goneovim"))'
 if = '!exists("g:vscode")'
 hook_source = 'source $VIM_DEIN/lazy/config/nvim-scrollbar.lua'
 on_event = 'BufEnter'

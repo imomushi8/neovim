@@ -1,32 +1,32 @@
 " directory variables {{{
-let s:dein_dir      = expand('~/.cache/dein')
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-let s:rc_dir        = expand('~/AppData/Local/nvim/dein')
+let g:dein_dir      = $HOME . '/.cache/dein'
+let g:dein_repo_dir = g:dein_dir . '/repos/github.com/Shougo/dein.vim'
+let g:toml_dir      = $LOCALAPPDATA . '/nvim/dein'
 " }}}
 
 " dein installation check {{{
 if &runtimepath !~# '/dein.vim'
-  if !isdirectory(s:dein_repo_dir)
-    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+  if !isdirectory(g:dein_repo_dir)
+    execute '!git clone https://github.com/Shougo/dein.vim' g:dein_repo_dir
   endif
-  execute 'set runtimepath^=' . s:dein_repo_dir
+  execute 'set runtimepath^=' . g:dein_repo_dir
 endif
 " }}}
 
 " begin settings {{{
-if dein#load_state(s:dein_dir)
-  call dein#begin(s:dein_dir)
+if dein#load_state(g:dein_dir)
+  call dein#begin(g:dein_dir)
 
-  if !isdirectory(s:rc_dir)
-    call mkdir(s:rc_dir, 'p')
+  if !isdirectory(g:toml_dir)
+    call mkdir(g:toml_dir, 'p')
   endif
   
   " read toml and cache as non-lazy
-  call dein#load_toml(s:rc_dir . '/utilities.toml',    {'lazy': 0})
-  call dein#load_toml(s:rc_dir . '/dependencies.toml', {'lazy': 0})
+  call dein#load_toml(g:toml_dir . '/utilities.toml',    {'lazy': 0})
+  call dein#load_toml(g:toml_dir . '/dependencies.toml', {'lazy': 0})
 
   " read toml and cache in rc_dir directory
-  let s:filelist = split(glob(s:rc_dir . '/lazy/*.toml'), "\n")
+  let s:filelist = split(glob(g:toml_dir . '/lazy/*.toml'), "\n")
   for file in s:filelist
     call dein#load_toml(file, {'lazy': 1})
   endfor

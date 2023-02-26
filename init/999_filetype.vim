@@ -1,4 +1,4 @@
 filetype plugin indent on
 augroup filetype_setting
-  autocmd BufRead,BufNewFile *.sbt,*.sc set filetype=scala
+  autocmd VimEnter,BufRead,BufNewFile *.sbt,*.sc set filetype=scala
 augroup END

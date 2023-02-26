@@ -1,21 +1,28 @@
 "--------------------------------
 " OS Setting
 "--------------------------------
+" Windowsのとき
 if has('win64')
-  set shell=powershell
+  " <CR+LF>を最優先にする
+  set fileformats=dos,unix,mac
+
+  " シェルの設定
+  set shell=pwsh
   set shellcmdflag=-command
   set shellquote=\"
   set shellxquote=
 
-  " Windowsのときは<CR+LF>を最優先する
-  set fileformats=dos,unix,mac
-  if !empty(system('where /Q python && echo has'))
-    let g:python3_host_prog='C:\tools\Anaconda3\python.exe'
-  endif
+  let g:python3_host_prog = system("Write-Host -NoNewline $(Get-Command python | Select-Object -ExpandProperty Definition)")
+
+" それ以外のとき
 else
-  " それ以外のときは<CR>を最優先する
+  " <CR>を最優先にする
   set fileformats=unix,dos,mac
-  let g:python3_host_prog = system("bash -c 'echo -n $(which python3)'")
+
+  " シェルの設定
+  set shell=bash
+
+  let g:python3_host_prog = system("echo -n $(which python3)")
 endif
 
 "--------------------------------

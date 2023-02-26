@@ -1,6 +1,12 @@
 ###################################################
 # IDE Support
 ###################################################
+# Startup Window
+[[plugins]]
+repo = 'mhinz/vim-startify'
+if = 'exists("g:goneovim")'
+hook_add = 'source $VIM_DEIN/config/startify.vim'
+
 # Status Line
 [[plugins]]
 repo = 'itchyny/lightline.vim'
@@ -76,6 +82,7 @@ repo = 'tpope/vim-surround'
 ###################################################
 [[plugins]]
 repo = 'kevinhwang91/nvim-hlslens'
+hook_add = 'source $VIM_DEIN/config/hlslens.lua'
 
 [[plugins]]
 repo = 't9md/vim-quickhl'
