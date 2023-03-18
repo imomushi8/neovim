@@ -21,6 +21,7 @@ if = '!exists("g:vscode")'
 # Open/Close Terminal by command
 [[plugins]]
 repo = 'akinsho/toggleterm.nvim'
+if = '!exists("g:vscode")'
 hook_add = 'source $VIM_DEIN/config/toggleterm.vim'
 
 
@@ -29,14 +30,17 @@ hook_add = 'source $VIM_DEIN/config/toggleterm.vim'
 ###################################################
 [[plugins]]
 repo = 'airblade/vim-gitgutter' 
+if = '!exists("g:vscode")'
 hook_add = 'source $VIM_DEIN/config/gitgutter.vim'
 
 [[plugins]]
 repo = 'airblade/vim-rooter'
+if = '!exists("g:vscode")'
 hook_add = 'source $VIM_DEIN/config/vim-rooter.vim'
 
 [[plugins]]
 repo = 'famiu/bufdelete.nvim'
+if = '!exists("g:vscode")'
 hook_add = 'source $VIM_DEIN/config/bufdelete.vim'
 
 [[plugins]]
@@ -51,6 +55,7 @@ repo = 'tpope/vim-repeat'
 ###################################################
 [[plugins]]
 repo = 'bkad/CamelCaseMotion'
+if = '!exists("g:vscode")'
 hook_add = 'source $VIM_DEIN/config/CamelCaseMotion.vim'
 
 [[plugins]]
@@ -92,6 +97,7 @@ repo = 't9md/vim-quickhl'
 ###################################################
 [[plugins]]
 repo = 'markonm/traces.vim'
+if = '!exists("g:vscode")'
 
 
 ###################################################

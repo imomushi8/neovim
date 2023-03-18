@@ -72,13 +72,15 @@ tnoremap <Esc> <C-\><C-n>
 "--------------------------------
 " LSP系
 "--------------------------------
-nnoremap <silent> ga    <cmd>lua vim.lsp.buf.code_action()<CR>
-nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> gs    <cmd>lua vim.lsp.buf.document_symbol()<CR>
-nnoremap <silent> gi    <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent> gR    <cmd>lua vim.lsp.buf.rename()<CR>
-nnoremap <silent> gw    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
-nnoremap <silent> gl    <cmd>lua vim.diagnostic.open_float(0, {scope="line"})<CR>
-nnoremap <silent> <A-l> <cmd>lua vim.lsp.buf.format { async = true }<CR>
-nnoremap <silent> <A-h> <cmd>lua vim.lsp.buf.signature_help()<CR>
+if (!exists("g:vscode"))
+  nnoremap <silent> ga    <cmd>lua vim.lsp.buf.code_action()<CR>
+  nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>
+  nnoremap <silent> gs    <cmd>lua vim.lsp.buf.document_symbol()<CR>
+  nnoremap <silent> gi    <cmd>lua vim.lsp.buf.implementation()<CR>
+  nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
+  nnoremap <silent> gR    <cmd>lua vim.lsp.buf.rename()<CR>
+  nnoremap <silent> gw    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
+  nnoremap <silent> gl    <cmd>lua vim.diagnostic.open_float(0, {scope="line"})<CR>
+  nnoremap <silent> <A-l> <cmd>lua vim.lsp.buf.format { async = true }<CR>
+  nnoremap <silent> <A-h> <cmd>lua vim.lsp.buf.signature_help()<CR>
+endif
