@@ -15,13 +15,14 @@ let g:startify_files_number  = 5
 
 let g:startify_bookmarks = [
   \ {'v': $MYVIMRC},
-  \ {'s': '/workspace_Scala'},
-  \ {'p': '/workspace_Python'}
   \]
-let g:startify_commands = []
+let g:startify_commands = [
+  \ {'s': 'Defx /workspace_Scala'},
+  \ {'p': 'Defx /workspace_Python'}
+  \]
 let g:startify_lists = [
   \ { 'type': 'bookmarks', 'header': ['   Bookmarks'] },
-  \ { 'type': 'sessions',  'header': ['   Sessions'] },
+  \ { 'type': 'commands',  'header': ['   Commands'] },
   \]
   " \ { 'type': 'files',     'header': ['   MRU'] },
   " \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
@@ -33,21 +34,21 @@ let g:startify_skiplist = [
   \ ]
 
 
-" " For Sessions
-let g:startify_session_sort           = 0
-let g:startify_session_autoload       = 1
-let g:startify_session_delete_buffers = 1
-let g:startify_session_persistence    = 1
-let g:startify_session_number         = 20
-let g:startify_session_dir            = $LOCALAPPDATA . '\nvim-data\sessions'
-let g:startify_session_remove_lines   = ['setlocal', 'winheight']
+" For Sessions
+" let g:startify_session_sort           = 0
+" let g:startify_session_autoload       = 0
+" let g:startify_session_delete_buffers = 0
+" let g:startify_session_persistence    = 0
+" let g:startify_session_number         = 20
+" let g:startify_session_dir            = $LOCALAPPDATA . '\nvim-data\sessions'
+" let g:startify_session_remove_lines   = ['setlocal', 'winheight']
 " let g:startify_session_before_save    = ['echo "Saving this session ..."']
 " let g:startify_session_savecmds       = ['echo "Saved a session."']
-let g:startify_session_savevars = [
-  \ 'g:startify_session_dir',
-  \ 'g:startify_session_savevars',
-  \ ]
-  " \ 'g:startify_session_savecmds',
+" let g:startify_session_savevars = [
+"   \ 'g:startify_session_dir',
+"   \ 'g:startify_session_savevars',
+"   \ 'g:startify_session_savecmds',
+"   \ ]
 
 
 " For Misc options
