@@ -15,10 +15,12 @@ let g:startify_files_number  = 5
 
 let g:startify_bookmarks = [
   \ {'v': $MYVIMRC},
+  \ {'c': 'C:\Users\CBKNd\AppData\Local\nvim\dein\config\startify.vim'}
   \]
 let g:startify_commands = [
   \ {'s': 'Defx /workspace_Scala'},
-  \ {'p': 'Defx /workspace_Python'}
+  \ {'p': 'Defx /workspace_Python'},
+  \ {'r': 'Defx /workspace_Rust'}
   \]
 let g:startify_lists = [
   \ { 'type': 'bookmarks', 'header': ['   Bookmarks'] },
