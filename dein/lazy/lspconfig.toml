@@ -11,6 +11,7 @@ hook_source = 'source $VIM_DEIN/lazy/config/mason.lua'
 [[plugins]]
 repo = 'williamboman/mason-lspconfig.nvim'
 on_source = 'nvim-lspconfig'
+hook_source = 'source $VIM_DEIN/lazy/config/mason-lspconfig.lua'
 
 
 ###################################################
@@ -20,7 +21,6 @@ on_source = 'nvim-lspconfig'
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
 on_source = 'mason.nvim'
-hook_source = 'source $VIM_DEIN/lazy/config/nvim-lspconfig.lua'
 
 
 ###################################################

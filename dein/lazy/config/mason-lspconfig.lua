@@ -14,6 +14,7 @@ mason_lsp.setup {
     'vimls',
     'jedi_language_server',
     'rust_analyzer',
+    'haskell-language-server',
   },
 }
 
