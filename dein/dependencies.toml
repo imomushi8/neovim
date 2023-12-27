@@ -13,4 +13,3 @@ repo = 'kyazdani42/nvim-web-devicons'
 
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
-

@@ -1,29 +1,39 @@
-local mason_lsp = require("mason-lspconfig")
-
 local opts = { noremap=true, silent=true }
 
--- Use an on_attach function to only map the following keys after the language server attaches to the current buffer
-vim.lsp.protocol.make_client_capabilities().textDocument.completion.completionItem.snippetSupport = true
+--------------------------------------------------------------------------------------
+-- mason setting
+--------------------------------------------------------------------------------------
+require('mason').setup({
+  PATH = "prepend", -- "skip" seems to cause the spawning error
+  ui = {
+    icons = {
+      package_installed = "✓",
+      package_pending = "➜",
+      package_uninstalled = "✗"
+    }
+  }
+})
+
 
 --------------------------------------------------------------------------------------
 -- mason-lspconfig setting
 --------------------------------------------------------------------------------------
+local mason_lsp = require("mason-lspconfig")
 mason_lsp.setup {
   -- Set up your LSP clients here
   ensure_installed = {
+    'yamlls',
     'vimls',
     'jedi_language_server',
     'rust_analyzer',
-    'haskell-language-server',
+    -- 'hls',
   },
+  automatic_installation = true,
 }
 
 mason_lsp.setup_handlers { function(server_name)
   require("lspconfig")[server_name].setup {
     on_attach = function(client, bufnr)
-      -- navic setting
-      require("nvim-navic").attach(client, bufnr)
-
       -- Enable completion triggered by <c-x><c-o>
       vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -38,7 +48,9 @@ mason_lsp.setup_handlers { function(server_name)
       vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
     end
   }
-end }
+end 
+}
+
 
 --------------------------------------------------------------------------------------
 -- Key Mapping
@@ -46,3 +58,11 @@ end }
 vim.api.nvim_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+
+
+--------------------------------------------------------------------------------------
+-- Complettion Setting
+--------------------------------------------------------------------------------------
+-- Use an on_attach function to only map the following keys after the language server attaches to the current buffer
+vim.lsp.protocol.make_client_capabilities().textDocument.completion.completionItem.snippetSupport = true
+

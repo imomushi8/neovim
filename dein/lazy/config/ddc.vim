@@ -9,12 +9,12 @@ inoremap <silent>       <BS>  <cmd>call pum#map#cancel()<CR>
 
 " Command Line Setting and Key Mapping
 call ddc#custom#patch_global('backspaceCompletion', 'v:true')
-call ddc#custom#patch_global('completionMenu', 'pum.vim')
+call ddc#custom#patch_global('ui', 'pum')
 call ddc#custom#patch_global('autoCompleteEvents',
     \ ['InsertEnter', 'TextChangedI', 'TextChangedP', 'CmdlineChanged'])
 call ddc#enable()
 
-call ddc#custom#patch_global('sources', ['around', 'nvim-lsp'])
+call ddc#custom#patch_global('sources', ['around', 'lsp'])
 call ddc#custom#patch_global('sourceOptions', {
     \ '_': {
     \   'matchers': ['matcher_head'],

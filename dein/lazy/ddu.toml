@@ -5,19 +5,20 @@
 [[plugins]]
 repo = 'Shougo/ddu.vim'
 on_source = 'denops.vim'
-hook_source = 'source $VIM_DEIN/lazy/config/ddu.vim'
 
 ###### ui(filer) ######
 [[plugins]]
 repo = 'Shougo/ddu-ui-filer'
 on_source = 'ddu.vim'
 depends = ['ddu.vim']
+hook_source = 'source $VIM_DEIN/lazy/config/ddu-ui-filer.vim'
 
 ###### ui(fuzzy finder) ######
 [[plugins]]
 repo = 'Shougo/ddu-ui-ff'
 on_source = 'ddu.vim'
 depends = ['ddu.vim']
+hook_source = 'source $VIM_DEIN/lazy/config/ddu-ui-ff.vim'
 
 ###### matcher ######
 [[plugins]]

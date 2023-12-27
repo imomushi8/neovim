@@ -5,16 +5,16 @@
 # ColorScheme
 [[plugins]]
 repo = 'catppuccin/nvim'
-if = '!exists("g:vscode")'
 hook_source = 'source $VIM_DEIN/lazy/config/catppuccin.lua'
 on_event = 'BufEnter'
+#if = '!exists("g:vscode")'
 
 # Scroll Bar
 [[plugins]]
 repo = 'petertriho/nvim-scrollbar'
-# if = '!(exists("g:vscode") || exists("g:goneovim"))'
-if = '!exists("g:vscode")'
 hook_source = 'source $VIM_DEIN/lazy/config/nvim-scrollbar.lua'
 on_source = 'nvim'
 # on_event = 'BufEnter'
+# if = '!exists("g:vscode")'
+# if = '!(exists("g:vscode") || exists("g:goneovim"))'
 

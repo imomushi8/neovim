@@ -1,19 +1,30 @@
-" directory variables {{{
-let g:dein_dir      = $HOME . '/.cache/dein'
-let g:dein_repo_dir = g:dein_dir . '/repos/github.com/Shougo/dein.vim'
-let g:toml_dir      = $LOCALAPPDATA . '/nvim/dein'
-" }}}
+" directory variables
+let g:dein_dir      = expand($HOME . '/.cache/dein')
+let g:dein_repo_dir = expand(g:dein_dir . '/repos/github.com/Shougo/dein.vim')
+let g:toml_dir      = expand($LOCALAPPDATA . '/nvim/dein')
 
-" dein installation check {{{
+if &compatible
+  set nocompatible
+endif
+
+echo '============================================'
+echo 'dein_repo_dir          : ' . g:dein_repo_dir
+echo 'dein_repo_dir is exists: ' . isdirectory(g:dein_repo_dir)
+echo '============================================'
+
+" dein installation check
 if &runtimepath !~# '/dein.vim'
   if !isdirectory(g:dein_repo_dir)
-    execute '!git clone https://github.com/Shougo/dein.vim' g:dein_repo_dir
+    let s:msg = system('git clone https://github.com/Shougo/dein.vim ' . g:dein_repo_dir)
+    echo 'EXECUTE git clone https://github.com/Shougo/dein.vim ' . g:dein_repo_dir
+    echo '============================================'
+    echo s:msg
+    echo '============================================'
   endif
   execute 'set runtimepath^=' . g:dein_repo_dir
 endif
-" }}}
 
-" begin settings {{{
+" begin settings
 if dein#load_state(g:dein_dir)
   call dein#begin(g:dein_dir)
 
@@ -35,21 +46,18 @@ if dein#load_state(g:dein_dir)
   call dein#end()
   call dein#save_state()
 endif
-" }}}
 
-" plugin installation check {{{
+" plugin installation check
 if dein#check_install()
   call dein#install()
 endif
-" }}}
 
-" plugin remove check {{{
+" plugin remove check
 let s:removed_plugins = dein#check_clean()
 if len(s:removed_plugins) > 0
   call map(s:removed_plugins, "delete(v:val, 'rf')")
   call dein#recache_runtimepath()
 endif
-" }}}
 
 if !has('nvim')
   call dein#add('roxma/nvim-yarp')

@@ -4,8 +4,8 @@
 
 [[plugins]]
 repo = 'vim-denops/denops.vim'
-if = '!exists("g:vscode")'
 on_event = 'BufEnter'
+# if = '!exists("g:vscode")'
 
 [[plugins]]
 repo = 'matsui54/denops-popup-preview.vim'

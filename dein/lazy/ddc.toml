@@ -16,6 +16,11 @@ repo = 'Shougo/ddc.vim'
 on_source = 'denops.vim'
 hook_source = 'source $VIM_DEIN/lazy/config/ddc.vim'
 
+# ui
+[[plugins]]
+repo = 'Shougo/ddc-ui-pum'
+on_source = 'ddc.vim'
+
 # matcher
 [[plugins]]
 repo = 'Shougo/ddc-matcher_head'

@@ -1,26 +1,29 @@
 ###################################################
-# mason
-###################################################
-
-[[plugins]]
-repo = 'williamboman/mason.nvim'
-if = '!exists("g:vscode")'
-on_event = 'BufEnter'
-hook_source = 'source $VIM_DEIN/lazy/config/mason.lua'
-
-[[plugins]]
-repo = 'williamboman/mason-lspconfig.nvim'
-on_source = 'nvim-lspconfig'
-hook_source = 'source $VIM_DEIN/lazy/config/mason-lspconfig.lua'
-
-
-###################################################
 # nvim-lsp
 ###################################################
 
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
+on_event = 'BufEnter'
+# on_source = 'mason.nvim'
+# if = '!exists("g:vscode")'
+
+
+###################################################
+# mason
+###################################################
+
+[[plugins]]
+repo = 'williamboman/mason.nvim'
+on_source = 'nvim-lspconfig'
+hook_source = 'source $VIM_DEIN/lazy/config/mason.lua'
+# on_event = 'BufEnter'
+
+[[plugins]]
+repo = 'williamboman/mason-lspconfig.nvim'
 on_source = 'mason.nvim'
+hook_source = 'source $VIM_DEIN/lazy/config/mason-lspconfig.lua'
+# on_source = 'nvim-lspconfig'
 
 
 ###################################################
@@ -29,9 +32,9 @@ on_source = 'mason.nvim'
 
 [[plugins]]
 repo = 'scalameta/nvim-metals'
-if = '!exists("g:vscode")'
 on_ft = 'scala'
 hook_source = 'source $VIM_DEIN/lazy/config/nvim-metals.vim'
+#if = '!exists("g:vscode")'
 
 
 ###################################################
@@ -40,33 +43,33 @@ hook_source = 'source $VIM_DEIN/lazy/config/nvim-metals.vim'
 
 [[plugins]]
 repo = 'rust-lang/rust.vim'
-if = '!exists("g:vscode")'
+#if = '!exists("g:vscode")'
 
 
 ###################################################
 # aerial
 ###################################################
 
-[[plugins]]
-repo = 'stevearc/aerial.nvim'
-on_source = 'nvim-lspconfig'
+# [[plugins]]
+# repo = 'stevearc/aerial.nvim'
+# on_source = 'nvim-lspconfig'
 
 
 ###################################################
 # Navigation bar
 ###################################################
 
-[[plugins]]
-repo = 'SmiteshP/nvim-navic'
-on_source = 'nvim-lspconfig'
-hook_source = 'source $VIM_DEIN/lazy/config/nvim-navic.lua'
+# [[plugins]]
+# repo = 'SmiteshP/nvim-navic'
+# on_source = 'nvim-lspconfig'
+# hook_source = 'source $VIM_DEIN/lazy/config/nvim-navic.lua'
 
 ###################################################
 # Error List
 ###################################################
 [[plugins]]
 repo = 'folke/trouble.nvim'
-if = '!exists("g:vscode")'
 depends = ['nvim-web-devicons']
 on_event = 'BufEnter'
 hook_source = 'source $VIM_DEIN/lazy/config/trouble.vim'
+#if = '!exists("g:vscode")'

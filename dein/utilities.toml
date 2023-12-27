@@ -4,14 +4,14 @@
 # Startup Window
 [[plugins]]
 repo = 'mhinz/vim-startify'
-if = 'exists("g:goneovim")'
 hook_add = 'source $VIM_DEIN/config/startify.vim'
+#if = 'exists("g:goneovim")'
 
 # Status Line
 [[plugins]]
 repo = 'itchyny/lightline.vim'
-if = '!exists("g:vscode")'
 hook_add = 'source $VIM_DEIN/config/lightline.vim'
+if = '!exists("g:vscode")'
 
 # Buffer Line
 [[plugins]]
@@ -19,10 +19,10 @@ repo = 'mengelbrecht/lightline-bufferline'
 if = '!exists("g:vscode")'
 
 # Open/Close Terminal by command
-[[plugins]]
-repo = 'akinsho/toggleterm.nvim'
-if = '!exists("g:vscode")'
-hook_add = 'source $VIM_DEIN/config/toggleterm.vim'
+# [[plugins]]
+# repo = 'akinsho/toggleterm.nvim'
+# if = '!exists("g:vscode")'
+# hook_add = 'source $VIM_DEIN/config/toggleterm.vim'
 
 
 ###################################################
@@ -30,18 +30,18 @@ hook_add = 'source $VIM_DEIN/config/toggleterm.vim'
 ###################################################
 [[plugins]]
 repo = 'airblade/vim-gitgutter' 
-if = '!exists("g:vscode")'
 hook_add = 'source $VIM_DEIN/config/gitgutter.vim'
+if = '!exists("g:vscode")'
 
 [[plugins]]
 repo = 'airblade/vim-rooter'
-if = '!exists("g:vscode")'
 hook_add = 'source $VIM_DEIN/config/vim-rooter.vim'
+if = '!exists("g:vscode")'
 
 [[plugins]]
 repo = 'famiu/bufdelete.nvim'
-if = '!exists("g:vscode")'
 hook_add = 'source $VIM_DEIN/config/bufdelete.vim'
+if = '!exists("g:vscode")'
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
@@ -55,8 +55,8 @@ repo = 'tpope/vim-repeat'
 ###################################################
 [[plugins]]
 repo = 'bkad/CamelCaseMotion'
-if = '!exists("g:vscode")'
 hook_add = 'source $VIM_DEIN/config/CamelCaseMotion.vim'
+if = '!exists("g:vscode")'
 
 [[plugins]]
 repo = 'haya14busa/vim-edgemotion'
@@ -107,10 +107,10 @@ if = '!exists("g:vscode")'
 # Indent Support
 [[plugins]]
 repo = 'Yggdroot/indentLine'
-if = '!(exists("g:vscode") || exists("g:goneovim"))'
 hook_add = 'source $VIM_DEIN/config/indentLine.vim'
+if = '!(exists("g:vscode") || exists("g:goneovim"))'
 
 # TODO Coloring
 [[plugins]]
-if = '!exists("g:vscode")'
 repo = 'folke/todo-comments.nvim'
+if = '!exists("g:vscode")'
