@@ -1,77 +1,99 @@
-" Key Mapping
-inoremap <silent><expr> <TAB> pum#visible() ? '<cmd>call pum#map#confirm()<CR>' : '<TAB>' 
-inoremap <silent><expr> <CR>  pum#visible() ? '<cmd>call pum#map#confirm()<CR>' : '<CR>' 
-inoremap <silent>       <C-j> <cmd>call pum#map#select_relative(+1)<CR>
-inoremap <silent>       <C-k> <cmd>call pum#map#select_relative(-1)<CR>
-inoremap <silent>       <C-y> <cmd>call pum#map#confirm()<CR>
-inoremap <silent>       <C-e> <cmd>call pum#map#cancel()<CR>
-inoremap <silent>       <BS>  <cmd>call pum#map#cancel()<CR>
+function! DdcInitialize() abort
+  call ddc#custom#patch_global({
+  \ 'backspaceCompletion': v:true,
+  \ 'autoCompleteEvents': ['InsertEnter', 'TextChangedI', 'TextChangedP', 'CmdlineChanged'],
+  \ 'ui': 'pum',
+  \ 'sources': ['lsp', 'around'],
+  \ 'cmdlineSources': {
+  \   ':': ['cmdline'],
+  \   '/': ['around', 'cmdline-history'],
+  \   '?': ['around', 'cmdline-history'],
+  \  },
+  \ 'sourceOptions': {
+  \   '_': {
+  \     'matchers': ['matcher_head'],
+  \     'sorters': ['sorter_rank'],
+  \     'converters': ['converter_remove_overlap'],
+  \     'minAutoCompleteLength': 1,
+  \     'ignoreCase': v:true,
+  \   },
+  \   'lsp': {
+  \     'mark': 'LSP',
+  \     'dup': 'keep',
+  \     'sorters': ['sorter_lsp-kind', 'sorter_rank'],
+  \     'keywordPattern': '[a-zA-Z0-9_À-ÿ$#\\-*]*',
+  \     'forceCompletionPattern': '\.\w*|:\w*|->\w*'
+  \   },
+  \   'around': {
+  \     'mark': 'Arroud',
+  \   },
+  \   'cmdline': {
+  \     'mark': 'Command Line',
+  \   },
+  \   'cmdline-history': {
+  \     'mark': 'History',
+  \   },
+  \ },
+  \ 'sourceParams': {
+  \   'lsp': {
+  \     'lspEngine': 'nvim-lsp',
+  \     'enableResolveItem': v:true,
+  \     'enableAdditionalTextEdit': v:true,
+  \     'confirmBehavior': 'replace',
+  \   },
+  \ },
+  \})
 
-" Command Line Setting and Key Mapping
-call ddc#custom#patch_global('backspaceCompletion', 'v:true')
-call ddc#custom#patch_global('ui', 'pum')
-call ddc#custom#patch_global('autoCompleteEvents',
-    \ ['InsertEnter', 'TextChangedI', 'TextChangedP', 'CmdlineChanged'])
-call ddc#enable()
 
-call ddc#custom#patch_global('sources', ['around', 'lsp'])
-call ddc#custom#patch_global('sourceOptions', {
-    \ '_': {
-    \   'matchers': ['matcher_head'],
-    \   'sorters': ['sorter_rank'],
-    \   'converters': ['converter_remove_overlap'],
-    \   'minAutoCompleteLength': 1
-    \ },
-    \ 'around': {
-    \   'mark': 'Arroud'
-    \ },
-    \ 'nvim-lsp': {
-    \   'mark': 'LSP',
-    \   'dup': 'keep',
-    \   'forceCompletionPattern': '\.\w*|:\w*|->\w*'
-    \ },
-    \})
+  " Snippet使う場合に必要かも。たぶんつかわん
+  "\     'snippetEngine': denops#callback#register({
+  "\           body -> vsnip#anonymous(body) }),
 
-nnoremap : <Cmd>call CommandlinePre()<CR>:
+  " ddc を利用可能にする
+  call ddc#enable()
 
-function! CommandlinePre() abort
-  cnoremap <silent><expr> <Tab>  pum#visible() ? '<cmd>call pum#map#confirm()<CR>' : '<Tab>' 
-  cnoremap <silent>       <C-j> <cmd>call pum#map#insert_relative(+1)<CR>
-  cnoremap <silent>       <C-k> <cmd>call pum#map#select_relative(-1)<CR>
-  cnoremap <silent>       <C-y> <cmd>call pum#map#confirm()<CR>
-  cnoremap <silent>       <C-e> <cmd>call pum#map#cancel()<CR>
-  " Overwrite sources
-  if !exists('b:prev_buffer_config')
-    let b:prev_buffer_config = ddc#custom#get_buffer()
-  endif
+  "=========================================================================
+  " Key Mapping
+  "=========================================================================
+  inoremap <silent><expr> <TAB> pum#visible() ? pum#map#confirm() : '<TAB>'
+  inoremap <silent><expr> <CR>  pum#visible() ? pum#map#confirm() : '<CR>'
+  inoremap <silent><expr> <C-j> pum#map#select_relative(+1)
+  inoremap <silent><expr> <C-k> pum#map#select_relative(-1)
+  inoremap <silent><expr> <C-y> pum#map#confirm()
+  inoremap <silent><expr> <C-e> pum#map#cancel()
+  inoremap <silent><expr> <BS>  pum#map#cancel()
 
-  call ddc#custom#patch_buffer('cmdlineSources', ['cmdline', 'cmdline-history'])
-  call ddc#custom#patch_buffer('sourceOptions', {
-        \ 'cmdline': {
-        \   'mark': 'Command Line',
-        \ },
-        \ 'cmdline-history': {
-        \   'mark': 'History',
-        \ },
-        \})
-  autocmd User DDCCmdlineLeave ++once call CommandlinePost()
-  autocmd InsertEnter <buffer> ++once call CommandlinePost()
-  " Enable command line completion
+  " コマンドライン補完の呼び出しをしてから通常キー入力とする
+  nnoremap : <Cmd>call DdcCommandlinePre()<CR>:
+
+endfunction
+
+
+" Command Line Completion Key Mapping
+function! DdcCommandlinePre() abort
+  cnoremap <silent><expr> <Tab> '<Cmd>call pum#visible() ? pum#map#confirm()<CR>' : '<Tab>' 
+  cnoremap <silent><expr> <C-j> pum#map#insert_relative(+1)
+  cnoremap <silent><expr> <C-k> pum#map#select_relative(-1)
+  cnoremap <silent><expr> <C-y> pum#map#confirm()
+  cnoremap <silent><expr> <C-e> pum#map#cancel()
+
+  " コマンドラインを抜ける度にdisableされるのでenableにする
   call ddc#enable_cmdline_completion()
 endfunction
 
-function! CommandlinePost() abort
+function! DdcCommandlinePost() abort
   silent! cunmap <Tab>
   silent! cunmap <C-j>
   silent! cunmap <C-k>
   silent! cunmap <C-y>
   silent! cunmap <C-e>
-
-  " Restore sources
-  if exists('b:prev_buffer_config')
-    call ddc#custom#set_buffer(b:prev_buffer_config)
-    unlet b:prev_buffer_config
-  else
-    call ddc#custom#set_buffer({})
-  endif
 endfunction
+
+augroup ddc_settings
+  autocmd!
+  autocmd BufEnter * call DdcInitialize()
+  " コマンドラインから抜け出すときにキーバインド等を変える
+  autocmd User DDCCmdlineLeave ++once call DdcCommandlinePost()
+  autocmd InsertEnter <buffer> ++once call DdcCommandlinePost()
+augroup END
+

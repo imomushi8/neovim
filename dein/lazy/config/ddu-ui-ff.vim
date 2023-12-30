@@ -28,7 +28,7 @@ function! s:dduScala() abort
 endfunction
 
 function! s:dduPython() abort
-  let g:ignoredDir = ['.git', '.vscode', , '__pycache__', '.ipynb_checkpoints']
+  let g:ignoredDir = ['.git', '.vscode', '__pycache__', '.ipynb_checkpoints']
 endfunction
 
 "================================================================================
@@ -94,11 +94,11 @@ endfunction
 " ---------------------------------------------
 " augroup
 " ---------------------------------------------
-augroup ddu_config_ff
+augroup ddu_ui_ff_settings
   autocmd!
   autocmd FileType ddu-ff        call s:ddu_ui_ff_keymapping()
   autocmd FileType ddu-ff-filter call s:ddu_filter_my_settings()
   
   autocmd FileType scala call s:dduScala()
   autocmd FileType py    call s:dduPython()
-augroup END
+augroup end

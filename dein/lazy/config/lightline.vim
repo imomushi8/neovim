@@ -1,3 +1,4 @@
+let g:lightline#bufferline#enable_devicons = 1
 let g:lightline = {
 \ 'enable': {
 \   'statusline': 1, 
@@ -40,11 +41,6 @@ let g:lightline = {
 \ },
 \}
 
-" \ 'colorscheme': 'tokyonight',
-" \ 'colorscheme': 'catppuccin',
-
-let g:lightline#bufferline#enable_devicons = 1
-
 function! LightLineMode()
   return &filetype =~ 'help\|defx\|exploler' ? '' : lightline#mode()
 endfunction
@@ -70,7 +66,7 @@ function! LightlineFileencoding()
   return winwidth('.') > 50 ? (&fenc !=# '' ? &fenc : &enc) : ''
 endfunction
 
-function! LightLineFugitive()
+function! LightlineFugitive()
   return winwidth('.') > 50 ? FugitiveHead() : ''
 endfunction
 

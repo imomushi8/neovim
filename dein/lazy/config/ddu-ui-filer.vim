@@ -1,20 +1,16 @@
 " ---------------------------------------------
 " key mapping
 " ---------------------------------------------
-"  TODO なぜか動かんくなった（neovimのバージョンのせい？)
 " Open as Filer
 nnoremap <silent><expr> <leader>f g:StartDDUForFiler()
 
 function! s:ddu_filer_keymapping() abort
-  nnoremap <silent><buffer><expr> o       ddu#ui#async_action('itemAction', {'name': 'open'})
-  "nnoremap <silent><buffer><expr> o       ddu#ui#async_action('itemAction')
+  nnoremap <silent><buffer><expr> o       ddu#ui#get_item()->get('isTree', v:false) ? 0 : ddu#ui#async_action('itemAction', {'name': 'open'})
   
   nnoremap <silent><buffer><expr> j       line('.') == line('$') ? 'gg' : 'j'
   nnoremap <silent><buffer><expr> k       line('.') == 1 ? 'G' : 'k'
   nnoremap <silent><buffer><expr> l       ddu#ui#get_item()->get('isTree', v:false) ? ddu#ui#async_action('itemAction', {'name': 'narrow'}) : 0
   nnoremap <silent><buffer><expr> h       ddu#ui#async_action('itemAction', {'name': 'narrow', 'params': {'path': '..'}})
-  "nnoremap <silent><buffer><expr> l       ddu#ui#get_item()->get('isTree', v:false) ? ddu#ui#async_action('expandItem') : 0
-  "nnoremap <silent><buffer><expr> h       ddu#ui#async_action('collapseItem')
 
   nnoremap <silent><buffer><expr> N       ddu#ui#async_action('itemAction', {'name': 'newDirectory'})
   nnoremap <silent><buffer><expr> n       ddu#ui#async_action('itemAction', {'name': 'newFile'})
@@ -55,6 +51,7 @@ function! g:StartDDUForFiler() abort
   \   'sourceOptions': {
   \     '_': {
   \       'columns': ['icon_filename'],
+  \       'path': expand('%:p:h'),
   \     },
   \   },
   \   'kindOptions': {
@@ -62,11 +59,11 @@ function! g:StartDDUForFiler() abort
   \       'defaultAction': 'open',
   \     },
   \   },
-	\   'actionOptions': {
-	\     'narrow': {
-	\       'quit': v:false,
-	\     },
-	\   },
+  \   'actionOptions': {
+  \     'narrow': {
+  \       'quit': v:false,
+  \     },
+  \   },
   \ })
 endfunction
 
@@ -100,18 +97,18 @@ function! g:StartDDUForFilerFullScreen(dir) abort
   \       'defaultAction': 'open',
   \     },
   \   },
-	\   'actionOptions': {
-	\     'narrow': {
-	\       'quit': v:false,
-	\     },
-	\   },
+  \   'actionOptions': {
+  \     'narrow': {
+  \       'quit': v:false,
+  \     },
+  \   },
   \ })
 endfunction
 
 " ---------------------------------------------
 " augroup
 " ---------------------------------------------
-augroup ddu_config_filer
+augroup ddu_ui_filer_settings
   autocmd!
   autocmd FileType ddu-filer call s:ddu_filer_keymapping()
-augroup END
+augroup end

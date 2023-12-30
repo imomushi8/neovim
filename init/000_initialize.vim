@@ -14,7 +14,8 @@ if has('win64')
 
   let g:python3_host_prog = system('Write-Host -NoNewline $(Get-Command python | Select-Object -ExpandProperty Definition)')
   
-  execute '!rm ' $LOCALAPPDATA . '/nvim-data/shada/main.shada*'
+
+  silent execute '!rm ' $LOCALAPPDATA . '/nvim-data/shada/main.shada*'
 
 " それ以外のとき
 else
@@ -26,10 +27,6 @@ else
 
   let g:python3_host_prog = system("echo -n $(which python3)")
 endif
-
-echo '============================================'
-echo 'python: ' . g:python3_host_prog
-echo '============================================'
 
 "--------------------------------
 " Basic Setting 

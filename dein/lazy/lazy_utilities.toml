@@ -1,0 +1,76 @@
+###################################################
+# Utility
+###################################################
+
+# ColorScheme
+[[plugins]]
+repo = 'catppuccin/nvim'
+hook_source = 'source $VIM_DEIN/lazy/config/catppuccin.lua'
+on_event = 'BufEnter'
+if = '!exists("g:vscode")'
+
+# Status Line
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_source = 'source $VIM_DEIN/lazy/config/lightline.vim'
+on_event = 'BufEnter'
+if = '!exists("g:vscode")'
+
+# Buffer Line
+[[plugins]]
+repo = 'mengelbrecht/lightline-bufferline'
+on_source = 'lightline.vim'
+
+# Scroll Bar
+[[plugins]]
+repo = 'petertriho/nvim-scrollbar'
+hook_source = 'source $VIM_DEIN/lazy/config/nvim-scrollbar.lua'
+on_event = 'BufEnter'
+if = '!exists("g:vscode")'
+
+# Terminal Viewer
+[[plugins]]
+repo = 'akinsho/toggleterm.nvim'
+hook_source = 'source $VIM_DEIN/lazy/config/toggleterm.vim'
+on_event = 'BufEnter'
+if = '!exists("g:vscode")'
+
+# Popup Preview
+[[plugins]]
+repo = 'matsui54/denops-popup-preview.vim'
+on_source = 'denops.vim'
+
+# Signature Help
+[[plugins]]
+repo = 'matsui54/denops-signature_help'
+hook_source = 'source $VIM_DEIN/lazy/config/denops-signature_help.vim'
+on_source = 'denops.vim'
+
+# Error List
+[[plugins]]
+repo = 'folke/trouble.nvim'
+hook_source = 'source $VIM_DEIN/lazy/config/trouble.vim'
+depends = ['nvim-web-devicons']
+on_source = 'nvim-lspconfig'
+
+
+###################################################
+# deprecated
+###################################################
+
+# aerial
+# [[plugins]]
+# repo = 'stevearc/aerial.nvim'
+# on_source = 'nvim-lspconfig'
+
+# Navigation bar
+# [[plugins]]
+# repo = 'SmiteshP/nvim-navic'
+# hook_source = 'source $VIM_DEIN/lazy/config/nvim-navic.lua'
+# on_source = 'nvim-lspconfig'
+
+# Terminal Viewer
+#[[plugins]]
+#repo = 'Shougo/deol.nvim'
+#hook_source = 'source $VIM_DEIN/lazy/config/deol.vim'
+#on_source = 'denops.vim'

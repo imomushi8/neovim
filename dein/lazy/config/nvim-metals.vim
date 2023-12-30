@@ -12,7 +12,7 @@ nnoremap <silent> <leader>a   <cmd>lua require("metals").open_all_diagnostics()<
 :command MetalsToggleTreeview lua require("metals.tvp").toggle_tree_view()
 :command MetalsRevealTreeview lua require("metals.tvp").reveal_in_tree()
 
-augroup metals
+augroup metals_settings
   autocmd!
   autocmd FileType scala setlocal omnifunc=v:lua.vim.lsp.omnifunc
   " Java のLSPも利用する場合はここがコンフリクトする可能性がある

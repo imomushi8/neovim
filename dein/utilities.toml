@@ -1,33 +1,8 @@
 ###################################################
-# IDE Support
-###################################################
-# Startup Window
-[[plugins]]
-repo = 'mhinz/vim-startify'
-hook_add = 'source $VIM_DEIN/config/startify.vim'
-#if = 'exists("g:goneovim")'
-
-# Status Line
-[[plugins]]
-repo = 'itchyny/lightline.vim'
-hook_add = 'source $VIM_DEIN/config/lightline.vim'
-if = '!exists("g:vscode")'
-
-# Buffer Line
-[[plugins]]
-repo = 'mengelbrecht/lightline-bufferline'
-if = '!exists("g:vscode")'
-
-# Open/Close Terminal by command
-# [[plugins]]
-# repo = 'akinsho/toggleterm.nvim'
-# if = '!exists("g:vscode")'
-# hook_add = 'source $VIM_DEIN/config/toggleterm.vim'
-
-
-###################################################
 # Utility
 ###################################################
+
+# 行の横にgitの差分表示を行う
 [[plugins]]
 repo = 'airblade/vim-gitgutter' 
 hook_add = 'source $VIM_DEIN/config/gitgutter.vim'
@@ -43,11 +18,18 @@ repo = 'famiu/bufdelete.nvim'
 hook_add = 'source $VIM_DEIN/config/bufdelete.vim'
 if = '!exists("g:vscode")'
 
+# Gitの操作をvimコマンドで行う
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 
 [[plugins]]
 repo = 'tpope/vim-repeat'
+
+# Startup Window
+[[plugins]]
+repo = 'mhinz/vim-startify'
+hook_add = 'source $VIM_DEIN/config/startify.vim'
+if = '!exists("g:vscode")'
 
 
 ###################################################
@@ -91,6 +73,7 @@ hook_add = 'source $VIM_DEIN/config/hlslens.lua'
 
 [[plugins]]
 repo = 't9md/vim-quickhl'
+
 
 ###################################################
 # Replacement Support

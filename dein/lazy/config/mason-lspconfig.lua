@@ -32,7 +32,10 @@ mason_lsp.setup {
 }
 
 mason_lsp.setup_handlers { function(server_name)
+  -- require("ddc_source_lsp_setup").setup()
+  local capabilities = require("ddc_source_lsp").make_client_capabilities()
   require("lspconfig")[server_name].setup {
+    capabilities = capabilities,
     on_attach = function(client, bufnr)
       -- Enable completion triggered by <c-x><c-o>
       vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')

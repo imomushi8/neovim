@@ -1,0 +1,10 @@
+###################################################
+# Python Settings
+###################################################
+
+# Toggle VIRTUAL_ENV
+#[[plugins]]
+#repo = 'jglasovic/venv-lsp.nvim'
+#hook_source = 'source $VIM_DEIN/lazy/config/venv-lsp.lua'
+#on_ft = 'python'
+#if = '!exists("g:vscode")'

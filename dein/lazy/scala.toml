@@ -1,0 +1,9 @@
+###################################################
+# Scala Settings
+###################################################
+
+[[plugins]]
+repo = 'scalameta/nvim-metals'
+hook_source = 'source $VIM_DEIN/lazy/config/nvim-metals.vim'
+on_ft = 'scala'
+if = '!exists("g:vscode")'

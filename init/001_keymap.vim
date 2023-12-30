@@ -65,15 +65,15 @@ nnoremap <silent> <leader><space> :nohl<CR>
 "--------------------------------
 " ターミナルモード
 "--------------------------------
-if (!exists("g:vscode"))
-  "新しいタブでターミナルを起動
-  nnoremap <C-t> :tabe<CR>:terminal<CR>
-  " Ctrl + q でターミナルを終了
-  tnoremap <C-q> <C-\><C-n>:q<CR>
-  tnoremap <C-d> exit<CR><CR>
-  " ターミナルモード中にEsc でターミナルノーマルモードに移行
-  tnoremap <Esc> <C-\><C-n>
-endif
+"if (!exists("g:vscode"))
+"  "新しいタブでターミナルを起動
+"  nnoremap <C-t> :tabe<CR>:terminal<CR>
+"  " Ctrl + q でターミナルを終了
+"  tnoremap <C-q> <C-\><C-n>:q<CR>
+"  tnoremap <C-d> exit<CR><CR>
+"  " ターミナルモード中にEsc でターミナルノーマルモードに移行
+"  tnoremap <Esc> <C-\><C-n>
+"endif
 
 
 "--------------------------------
