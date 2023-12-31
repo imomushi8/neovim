@@ -1,4 +1,4 @@
-function! DdcInitialize() abort
+function! s:ddc_initialize() abort
   call ddc#custom#patch_global({
   \ 'backspaceCompletion': v:true,
   \ 'autoCompleteEvents': ['InsertEnter', 'TextChangedI', 'TextChangedP', 'CmdlineChanged'],
@@ -20,8 +20,6 @@ function! DdcInitialize() abort
   \   'lsp': {
   \     'mark': 'LSP',
   \     'dup': 'keep',
-  \     'sorters': ['sorter_lsp-kind', 'sorter_rank'],
-  \     'keywordPattern': '[a-zA-Z0-9_À-ÿ$#\\-*]*',
   \     'forceCompletionPattern': '\.\w*|:\w*|->\w*'
   \   },
   \   'around': {
@@ -34,20 +32,20 @@ function! DdcInitialize() abort
   \     'mark': 'History',
   \   },
   \ },
-  \ 'sourceParams': {
-  \   'lsp': {
-  \     'lspEngine': 'nvim-lsp',
-  \     'enableResolveItem': v:true,
-  \     'enableAdditionalTextEdit': v:true,
-  \     'confirmBehavior': 'replace',
-  \   },
-  \ },
   \})
 
-
-  " Snippet使う場合に必要かも。たぶんつかわん
+  "\     'sorters': ['sorter_lsp-kind', 'sorter_rank'],
+  "\ 'sourceParams': {
+  "\   'lsp': {
+  "\     'lspEngine': 'nvim-lsp',
   "\     'snippetEngine': denops#callback#register({
   "\           body -> vsnip#anonymous(body) }),
+  "\     'enableResolveItem': v:true,
+  "\     'enableAdditionalTextEdit': v:true,
+  "\     'confirmBehavior': 'replace',
+  "\   },
+  "\ },
+
 
   " ddc を利用可能にする
   call ddc#enable()
@@ -91,9 +89,8 @@ endfunction
 
 augroup ddc_settings
   autocmd!
-  autocmd BufEnter * call DdcInitialize()
+  autocmd BufEnter * call s:ddc_initialize()
   " コマンドラインから抜け出すときにキーバインド等を変える
   autocmd User DDCCmdlineLeave ++once call DdcCommandlinePost()
   autocmd InsertEnter <buffer> ++once call DdcCommandlinePost()
-augroup END
-
+augroup end

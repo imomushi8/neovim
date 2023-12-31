@@ -24,18 +24,20 @@ mason_lsp.setup {
   ensure_installed = {
     'yamlls',
     'vimls',
-    'jedi_language_server',
+    'pylsp',
     'rust_analyzer',
-    -- 'hls',
   },
   automatic_installation = true,
 }
 
+-- Use an on_attach function to only map the following keys after the language server attaches to the current buffer
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- local capabilities = require("ddc_source_lsp").make_client_capabilities()
+-- capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 mason_lsp.setup_handlers { function(server_name)
-  -- require("ddc_source_lsp_setup").setup()
-  local capabilities = require("ddc_source_lsp").make_client_capabilities()
   require("lspconfig")[server_name].setup {
-    capabilities = capabilities,
+    -- capabilities = capabilities,
     on_attach = function(client, bufnr)
       -- Enable completion triggered by <c-x><c-o>
       vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
@@ -54,6 +56,7 @@ mason_lsp.setup_handlers { function(server_name)
 end 
 }
 
+require("ddc_source_lsp_setup").setup()
 
 --------------------------------------------------------------------------------------
 -- Key Mapping
@@ -61,11 +64,3 @@ end
 vim.api.nvim_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
-
-
---------------------------------------------------------------------------------------
--- Complettion Setting
---------------------------------------------------------------------------------------
--- Use an on_attach function to only map the following keys after the language server attaches to the current buffer
-vim.lsp.protocol.make_client_capabilities().textDocument.completion.completionItem.snippetSupport = true
-

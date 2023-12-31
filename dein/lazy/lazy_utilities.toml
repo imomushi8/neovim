@@ -16,6 +16,12 @@ hook_source = 'source $VIM_DEIN/lazy/config/lightline.vim'
 on_event = 'BufEnter'
 if = '!exists("g:vscode")'
 
+# Sippet plugins
+[[plugins]]
+repo = 'hrsh7th/vim-vsnip'
+on_event = 'BufEnter'
+
+
 # Buffer Line
 [[plugins]]
 repo = 'mengelbrecht/lightline-bufferline'
@@ -68,9 +74,3 @@ on_source = 'nvim-lspconfig'
 # repo = 'SmiteshP/nvim-navic'
 # hook_source = 'source $VIM_DEIN/lazy/config/nvim-navic.lua'
 # on_source = 'nvim-lspconfig'
-
-# Terminal Viewer
-#[[plugins]]
-#repo = 'Shougo/deol.nvim'
-#hook_source = 'source $VIM_DEIN/lazy/config/deol.vim'
-#on_source = 'denops.vim'

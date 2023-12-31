@@ -4,7 +4,6 @@
 
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
-# on_event = 'BufEnter'
 on_source = 'ddc-source-lsp-setup'
 if = '!exists("g:vscode")'
 
@@ -21,3 +20,4 @@ on_source = 'nvim-lspconfig'
 repo = 'williamboman/mason-lspconfig.nvim'
 hook_source = 'source $VIM_DEIN/lazy/config/mason-lspconfig.lua'
 on_source = 'mason.nvim'
+
