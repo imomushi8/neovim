@@ -12,15 +12,14 @@ let g:startify_custom_header = g:ascii + startify#fortune#boxed()
 let g:startify_custom_footer = ['-------------------------------------------------------']
 let g:startify_padding_left  = 4
 let g:startify_files_number  = 5
-
 let g:startify_bookmarks = [
   \ {'v': $MYVIMRC},
-  \ {'c': 'C:\Users\CBKNd\AppData\Local\nvim\dein\config\startify.vim'}
+  \ {'c': expand('$XDG_CONFIG_HOME/nvim/dein/config/startify.vim')}
   \]
 let g:startify_commands = [
-  \ {'s': "call g:StartDDUForFilerFullScreen('/workspace_Scala')"},
-  \ {'p': "call g:StartDDUForFilerFullScreen('/workspace_Python')"},
-  \ {'r': "call g:StartDDUForFilerFullScreen('/workspace_Rust')"}
+  \ {'s': "call g:StartDDUForFilerFullScreen(expand('$HOME/cdrive/workspace_Scala'))"},
+  \ {'p': "call g:StartDDUForFilerFullScreen(expand('$HOME/cdrive/workspace_Python'))"},
+  \ {'r': "call g:StartDDUForFilerFullScreen(expand('$HOME/cdrive/workspace_Rust'))"}
   \]
 let g:startify_lists = [
   \ { 'type': 'bookmarks', 'header': ['   Bookmarks'] },
