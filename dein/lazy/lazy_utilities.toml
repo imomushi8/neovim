@@ -37,7 +37,7 @@ if = '!exists("g:vscode")'
 # Terminal Viewer
 [[plugins]]
 repo = 'akinsho/toggleterm.nvim'
-hook_source = 'source $XDG_CONFIG_HOME/nvim/dein/lazy/config/Toggleterm.vim'
+hook_source = 'source $XDG_CONFIG_HOME/nvim/dein/lazy/config/ToggleTerm.vim'
 on_event = 'BufEnter'
 if = '!exists("g:vscode")'
 
