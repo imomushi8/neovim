@@ -11,14 +11,14 @@ on_source = 'denops.vim'
 repo = 'Shougo/ddu-ui-filer'
 on_source = 'ddu.vim'
 depends = ['ddu.vim']
-hook_source = 'source $VIM_DEIN/lazy/config/ddu-ui-filer.vim'
+hook_source = 'source $XDG_CONFIG_HOME/nvim/dein/lazy/config/ddu-ui-filer.vim'
 
 ###### ui(fuzzy finder) ######
 [[plugins]]
 repo = 'Shougo/ddu-ui-ff'
 on_source = 'ddu.vim'
 depends = ['ddu.vim']
-hook_source = 'source $VIM_DEIN/lazy/config/ddu-ui-ff.vim'
+hook_source = 'source $XDG_CONFIG_HOME/nvim/dein/lazy/config/ddu-ui-ff.vim'
 
 ###### matcher ######
 [[plugins]]

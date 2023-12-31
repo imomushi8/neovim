@@ -5,9 +5,9 @@ endif
 " dein settings and installation
 if has('python3')
   " directory variables
-  let g:dein_dir      = expand($HOME . '/.cache/dein')
+  let g:dein_dir      = expand($XDG_CACHE_HOME . '/dein')
   let g:dein_repo_dir = expand(g:dein_dir . '/repos/github.com/Shougo/dein.vim')
-  let g:toml_dir      = expand($LOCALAPPDATA . '/nvim/dein')
+  let g:toml_dir      = expand($XDG_CONFIG_HOME . '/nvim/dein')
 
   " dein installation check
   if &runtimepath !~# '/dein.vim'

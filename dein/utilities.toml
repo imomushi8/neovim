@@ -5,17 +5,17 @@
 # 行の横にgitの差分表示を行う
 [[plugins]]
 repo = 'airblade/vim-gitgutter' 
-hook_add = 'source $VIM_DEIN/config/gitgutter.vim'
+hook_add = 'source $XDG_CONFIG_HOME/nvim/dein/config/gitgutter.vim'
 if = '!exists("g:vscode")'
 
 [[plugins]]
 repo = 'airblade/vim-rooter'
-hook_add = 'source $VIM_DEIN/config/vim-rooter.vim'
+hook_add = 'source $XDG_CONFIG_HOME/nvim/dein/config/vim-rooter.vim'
 if = '!exists("g:vscode")'
 
 [[plugins]]
 repo = 'famiu/bufdelete.nvim'
-hook_add = 'source $VIM_DEIN/config/bufdelete.vim'
+hook_add = 'source $XDG_CONFIG_HOME/nvim/dein/config/bufdelete.vim'
 if = '!exists("g:vscode")'
 
 # Gitの操作をvimコマンドで行う
@@ -28,7 +28,7 @@ repo = 'tpope/vim-repeat'
 # Startup Window
 [[plugins]]
 repo = 'mhinz/vim-startify'
-hook_add = 'source $VIM_DEIN/config/startify.vim'
+hook_add = 'source $XDG_CONFIG_HOME/nvim/dein/config/startify.vim'
 if = '!exists("g:vscode")'
 
 
@@ -37,12 +37,12 @@ if = '!exists("g:vscode")'
 ###################################################
 [[plugins]]
 repo = 'bkad/CamelCaseMotion'
-hook_add = 'source $VIM_DEIN/config/CamelCaseMotion.vim'
+hook_add = 'source $XDG_CONFIG_HOME/nvim/dein/config/CamelCaseMotion.vim'
 if = '!exists("g:vscode")'
 
 [[plugins]]
 repo = 'haya14busa/vim-edgemotion'
-hook_add = 'source $VIM_DEIN/config/vim-edgemotion.vim'
+hook_add = 'source $XDG_CONFIG_HOME/nvim/dein/config/vim-edgemotion.vim'
 
 [[plugins]]
 repo = 'rhysd/clever-f.vim'
@@ -69,7 +69,7 @@ repo = 'tpope/vim-surround'
 ###################################################
 [[plugins]]
 repo = 'kevinhwang91/nvim-hlslens'
-hook_add = 'source $VIM_DEIN/config/hlslens.lua'
+hook_add = 'source $XDG_CONFIG_HOME/nvim/dein/config/hlslens.lua'
 
 [[plugins]]
 repo = 't9md/vim-quickhl'
@@ -90,7 +90,7 @@ if = '!exists("g:vscode")'
 # Indent Support
 [[plugins]]
 repo = 'Yggdroot/indentLine'
-hook_add = 'source $VIM_DEIN/config/indentLine.vim'
+hook_add = 'source $XDG_CONFIG_HOME/nvim/dein/config/indentLine.vim'
 if = '!(exists("g:vscode") || exists("g:goneovim"))'
 
 # TODO Coloring
