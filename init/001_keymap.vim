@@ -1,7 +1,11 @@
-"=================================================================================
-" キーマッピング
+"--------------------------------
+" Key Mapping
+"--------------------------------
 let mapleader = ','
 
+"--------------------------------
+" 不要キーマップを消す
+"--------------------------------
 nnoremap <leader> <nop>
 nnoremap K <nop>
 nnoremap J <nop>
@@ -29,11 +33,13 @@ nnoremap <silent> <C-h> :bprev<CR>
 nnoremap <silent> <C-l> :bnext<CR>
 nnoremap <silent> <C-d> :bdelete<CR>
 
+
 "--------------------------------
 " ウィンドウ系
 "--------------------------------
 nnoremap <silent> <C-n> <C-w>w
 nnoremap <silent> <C-p> <C-w>W
+
 
 "--------------------------------
 " 挿入系
@@ -59,33 +65,3 @@ nnoremap <leader>g :<C-u>%s/<C-r><C-w>//g<Left><Left>
 " 検索結果のハイライトを削除
 nnoremap <silent> <leader><space> :nohl<CR>
 
-"--------------------------------
-" ターミナルモード
-"--------------------------------
-if (!exists("g:vscode"))
-"  "新しいタブでターミナルを起動
-"  nnoremap <C-t> :tabe<CR>:terminal<CR>
-"  " Ctrl + q でターミナルを終了
-"  tnoremap <C-q> <C-\><C-n>:q<CR>
-"  tnoremap <C-d> exit<CR><CR>
-"
-  " ターミナルモード中にEsc でターミナルノーマルモードに移行
-  tnoremap <Esc> <C-\><C-n>
-endif
-
-
-"--------------------------------
-" LSP系
-"--------------------------------
-if (!exists("g:vscode"))
-  nnoremap <silent> ga    <cmd>lua vim.lsp.buf.code_action()<CR>
-  nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>
-  nnoremap <silent> gs    <cmd>lua vim.lsp.buf.document_symbol()<CR>
-  nnoremap <silent> gi    <cmd>lua vim.lsp.buf.implementation()<CR>
-  nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
-  nnoremap <silent> gR    <cmd>lua vim.lsp.buf.rename()<CR>
-  nnoremap <silent> gw    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
-  nnoremap <silent> gl    <cmd>lua vim.diagnostic.open_float(0, {scope="line"})<CR>
-  nnoremap <silent> <A-l> <cmd>lua vim.lsp.buf.format { async = true }<CR>
-  nnoremap <silent> <A-h> <cmd>lua vim.lsp.buf.signature_help()<CR>
-endif
