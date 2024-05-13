@@ -38,6 +38,7 @@ function! g:StartDDUForFiler() abort
   \   'ui': 'filer',
   \   'uiParams': {
   \     'filer': {
+  \       'sort': 'extension',
   \       'winWidth': 35,
   \       'split': 'vertical',
   \       'splitDirection': 'topleft',
@@ -51,7 +52,6 @@ function! g:StartDDUForFiler() abort
   \   ],
   \   'sourceOptions': {
   \     '_': {
-  \       'matchers': ['matcher_files'],
   \       'converters': ['converter_devicon'],
   \       'path': expand('%:p:h'),
   \     },
@@ -72,16 +72,17 @@ endfunction
 function! g:StartDDUForFilerFullScreen(dir) abort
   call ddu#start({
   \   'ui': 'filer',
-  \	  'uiParams': {
-  \	    'filer': {
-  \	      'split': 'vertical',
+  \   'uiParams': {
+  \     'filer': {
+  \       'sort': 'extension',
+  \       'split': 'vertical',
   \       'splitDirection': 'topleft',
-  \	      'winHeight': &lines,
-  \	      'winWidth': &columns,
-  \	      'winRow': 0,
-  \	      'winCol': 0,
-  \	    },
-  \	  },
+  \       'winHeight': &lines,
+  \       'winWidth': &columns,
+  \       'winRow': 0,
+  \       'winCol': 0,
+  \     },
+  \   },
   \   'sources': [
   \     {
   \       'name': 'file',
@@ -90,7 +91,6 @@ function! g:StartDDUForFilerFullScreen(dir) abort
   \   ],
   \   'sourceOptions': {
   \     '_': {
-  \       'matchers': ['matcher_files'],
   \       'converters': ['converter_devicon'],
   \       'path': a:dir,
   \     },

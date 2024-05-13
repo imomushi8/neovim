@@ -48,12 +48,6 @@ repo = 'Shougo/ddu-source-file_rec'
 on_source = 'ddu-kind-file'
 depends = ['ddu.vim']
 
-###### column ######
-[[plugins]]
-repo = 'ryota2357/ddu-column-icon_filename'
-on_source = 'ddu.vim'
-depends = ['ddu.vim']
-
 ###### converter ######
 repo = 'uga-rosa/ddu-filter-converter_devicon'
 on_source = 'ddu.vim'
