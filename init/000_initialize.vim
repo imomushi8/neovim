@@ -1,9 +1,6 @@
 "--------------------------------
 " Basic Setting 
 "--------------------------------
-syntax enable
-filetype plugin indent on
-
 set mouse=
 set hidden
 set showcmd

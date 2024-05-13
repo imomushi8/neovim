@@ -6,7 +6,8 @@ nnoremap <silent><expr> <leader>f g:StartDDUForFiler()
 
 function! s:ddu_filer_keymapping() abort
   nnoremap <silent><buffer><expr> o       ddu#ui#get_item()->get('isTree', v:false) ? 0 : ddu#ui#async_action('itemAction', {'name': 'open'})
-  
+  nnoremap <silent><buffer><expr> O       ddu#ui#get_item()->get('isTree', v:false) ? 0 : ddu#ui#async_action('itemAction', {'name': 'open', 'params': 'drop'})
+
   nnoremap <silent><buffer><expr> j       line('.') == line('$') ? 'gg' : 'j'
   nnoremap <silent><buffer><expr> k       line('.') == 1 ? 'G' : 'k'
   nnoremap <silent><buffer><expr> l       ddu#ui#get_item()->get('isTree', v:false) ? ddu#ui#async_action('itemAction', {'name': 'narrow'}) : 0
@@ -50,7 +51,9 @@ function! g:StartDDUForFiler() abort
   \   ],
   \   'sourceOptions': {
   \     '_': {
+  \       'matchers': ['matcher_files'],
   \       'columns': ['icon_filename'],
+  \       'converters': ['converter_devicon'],
   \       'path': expand('%:p:h'),
   \     },
   \   },
@@ -88,7 +91,9 @@ function! g:StartDDUForFilerFullScreen(dir) abort
   \   ],
   \   'sourceOptions': {
   \     '_': {
+  \       'matchers': ['matcher_files'],
   \       'columns': ['icon_filename'],
+  \       'converters': ['converter_devicon'],
   \       'path': a:dir,
   \     },
   \   },

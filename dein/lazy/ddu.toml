@@ -26,6 +26,11 @@ repo = 'Shougo/ddu-filter-matcher_substring'
 on_source = 'ddu.vim'
 depends = ['ddu.vim']
 
+[[plugins]]
+repo = 'Shougo/ddu-filter-matcher_files'
+on_source = 'ddu.vim'
+depends = ['ddu.vim']
+
 ###### kind ######
 [[plugins]]
 repo = 'Shougo/ddu-kind-file'
@@ -46,5 +51,10 @@ depends = ['ddu.vim']
 ###### column ######
 [[plugins]]
 repo = 'ryota2357/ddu-column-icon_filename'
+on_source = 'ddu.vim'
+depends = ['ddu.vim']
+
+###### converter ######
+repo = 'uga-rosa/ddu-filter-converter_devicon'
 on_source = 'ddu.vim'
 depends = ['ddu.vim']

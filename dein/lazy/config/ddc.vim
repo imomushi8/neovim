@@ -50,6 +50,12 @@ function! s:ddc_initialize() abort
   " ddc を利用可能にする
   call ddc#enable()
 
+  " 標準のポップアップメニューの設定を初期化
+  set wildmode=full
+  set wildoptions=pum,tagfile
+  set completeopt=menu,preview
+
+
   "=========================================================================
   " Key Mapping
   "=========================================================================

@@ -12,13 +12,13 @@ augroup vim_rooter_settings
   autocmd VimEnter,BufRead,BufNewFile *.sbt,*.sc set filetype=scala
   autocmd VimEnter,BufRead,BufNewFile *.rs set filetype=rust
 
-  autocmd FileType vim    call VimRooterGit()
-  autocmd FileType lua    call VimRooterGit()
-  autocmd FileType c      call VimRooterGit()
-  autocmd FileType cpp    call VimRooterGit()
-  autocmd FileType rs     call VimRooterRust()
-  autocmd FileType scala  call VimRooterScala()
-  autocmd FileType python call VimRooterPython()
+  autocmd BufRead *.vim               call VimRooterGit()
+  autocmd BufRead *.lua               call VimRooterGit()
+  autocmd BufRead *.c                 call VimRooterGit()
+  autocmd BufRead *.cpp               call VimRooterGit()
+  autocmd BufRead *.rs                call VimRooterRust()
+  autocmd BufRead *.scala,*.sbt,*.sc  call VimRooterScala()
+  autocmd BufRead *.py                call VimRooterPython()
 augroup END
 
 function! VimRooterGit() 
@@ -39,16 +39,4 @@ endfunction
 function! VimRooterPython() 
   let g:rooter_patterns = ['.git']
   Rooter
-
-  " venvを探してactivateする
-  " !!!!!注!!!!! なぜかドットファイル形式だと検索されないので、（うざすぎ）venvのときにはいれないこと。
-  let path_str = getcwd() . "/**/Scripts/activate"
-  let g:venv = expand(path_str)
-  if executable(g:venv)
-    call system(g:venv)
-  else
-    echo "no venv"
-    echo path_str
-    echo g:venv
-  endif
 endfunction
