@@ -52,7 +52,6 @@ function! g:StartDDUForFiler() abort
   \   'sourceOptions': {
   \     '_': {
   \       'matchers': ['matcher_files'],
-  \       'columns': ['icon_filename'],
   \       'converters': ['converter_devicon'],
   \       'path': expand('%:p:h'),
   \     },
@@ -92,7 +91,6 @@ function! g:StartDDUForFilerFullScreen(dir) abort
   \   'sourceOptions': {
   \     '_': {
   \       'matchers': ['matcher_files'],
-  \       'columns': ['icon_filename'],
   \       'converters': ['converter_devicon'],
   \       'path': a:dir,
   \     },
