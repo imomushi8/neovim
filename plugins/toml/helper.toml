@@ -1,0 +1,30 @@
+###################################################
+# Helper
+###################################################
+
+# Snippet plugins
+[[plugins]]
+repo = 'hrsh7th/vim-vsnip'
+on_event = 'BufEnter'
+
+# Popup Preview
+[[plugins]]
+repo = 'matsui54/denops-popup-preview.vim'
+on_event = 'BufEnter'
+
+# Signature Help
+[[plugins]]
+repo = 'matsui54/denops-signature_help'
+hook_source = 'source $XDG_CONFIG_HOME/nvim/plugins/hooks/denops-signature_help.vim'
+on_event = 'BufEnter'
+
+# Gitの操作をvimコマンドで行う
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+on_event = 'BufEnter'
+
+# Terminal Viewer
+[[plugins]]
+repo = 'akinsho/toggleterm.nvim'
+hook_source = 'source $XDG_CONFIG_HOME/nvim/plugins/hooks/ToggleTerm.vim'
+on_event = 'BufEnter'

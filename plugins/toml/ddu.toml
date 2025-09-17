@@ -1,0 +1,56 @@
+###################################################
+# ddu
+###################################################
+
+[[plugins]]
+repo = 'Shougo/ddu.vim'
+depends = ['denops.vim']
+on_event = 'BufEnter'
+
+###### ui(filer) ######
+[[plugins]]
+repo = 'Shougo/ddu-ui-filer'
+on_source = 'ddu.vim'
+depends = ['ddu.vim']
+hook_source = 'source $XDG_CONFIG_HOME/nvim/plugins/hooks/ddu-ui-filer.vim'
+
+###### ui(fuzzy finder) ######
+[[plugins]]
+repo = 'Shougo/ddu-ui-ff'
+on_source = 'ddu.vim'
+depends = ['ddu.vim']
+hook_source = 'source $XDG_CONFIG_HOME/nvim/plugins/hooks/ddu-ui-ff.vim'
+
+###### matcher ######
+[[plugins]]
+repo = 'Shougo/ddu-filter-matcher_substring'
+depends = ['ddu.vim']
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-filter-matcher_files'
+depends = ['ddu.vim']
+on_source = 'ddu.vim'
+
+###### kind ######
+[[plugins]]
+repo = 'Shougo/ddu-kind-file'
+depends = ['ddu.vim']
+on_source = 'ddu.vim'
+
+###### source ######
+[[plugins]]
+repo = 'Shougo/ddu-source-file'
+depends = ['ddu.vim']
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-source-file_rec'
+on_source = 'ddu-kind-file'
+depends = ['ddu.vim']
+on_source = 'ddu.vim'
+
+###### converter ######
+repo = 'uga-rosa/ddu-filter-converter_devicon'
+depends = ['ddu.vim']
+on_source = 'ddu.vim'

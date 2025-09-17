@@ -1,0 +1,9 @@
+###################################################
+# Scala Settings
+###################################################
+
+[[plugins]]
+repo = 'scalameta/nvim-metals'
+hook_source = 'source $XDG_CONFIG_HOME/nvim/plugins/hooks/nvim-metals.vim'
+on_ft = 'scala'
+if = '!exists("g:vscode")'

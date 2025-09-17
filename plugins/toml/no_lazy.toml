@@ -1,0 +1,68 @@
+###################################################
+# Dependency
+###################################################
+
+[[plugins]]
+repo = 'nvim-lua/plenary.nvim'
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
+[[plugins]]
+repo = 'kyazdani42/nvim-web-devicons'
+
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+
+###################################################
+# 移動サポート
+###################################################
+
+[[plugins]]
+repo = 'bkad/CamelCaseMotion'
+hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/hooks/CamelCaseMotion.vim'
+
+[[plugins]]
+repo = 'haya14busa/vim-edgemotion'
+hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/hooks/vim-edgemotion.vim'
+
+[[plugins]]
+repo = 'rhysd/clever-f.vim'
+
+[[plugins]]
+repo = 'unblevable/quick-scope'
+
+# バッファの削除強化
+[[plugins]]
+repo = 'famiu/bufdelete.nvim'
+hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/hooks/bufdelete.vim'
+
+###################################################
+# 入力サポート
+###################################################
+[[plugins]]
+repo = 'jiangmiao/auto-pairs'
+
+[[plugins]]
+repo = 'tpope/vim-commentary'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'tpope/vim-repeat'
+
+###################################################
+# 検索サポート
+###################################################
+[[plugins]]
+repo = 'kevinhwang91/nvim-hlslens'
+
+[[plugins]]
+repo = 't9md/vim-quickhl'
+
+###################################################
+# 置換サポート
+###################################################
+[[plugins]]
+repo = 'markonm/traces.vim'

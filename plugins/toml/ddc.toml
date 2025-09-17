@@ -1,0 +1,71 @@
+###################################################
+# pum
+###################################################
+
+[[plugins]]
+repo = 'Shougo/pum.vim'
+depends = ['denops.vim']
+on_event = 'BufEnter'
+
+###################################################
+# ddc
+###################################################
+
+[[plugins]]
+repo = 'Shougo/ddc.vim'
+hook_source = 'source $XDG_CONFIG_HOME/nvim/plugins/hooks/ddc.vim'
+on_source = 'pum.vim'
+
+# ui
+[[plugins]]
+repo = 'Shougo/ddc-ui-pum'
+depends = ['ddc.vim']
+on_source = 'ddc.vim'
+
+# matcher
+[[plugins]]
+repo = 'Shougo/ddc-matcher_head'
+depends = ['ddc.vim']
+on_source = 'ddc.vim'
+
+# sorter
+[[plugins]]
+repo = 'Shougo/ddc-sorter_rank'
+depends = ['ddc.vim']
+on_source = 'ddc.vim'
+
+# converter
+[[plugins]]
+repo = 'Shougo/ddc-converter_remove_overlap'
+depends = ['ddc.vim']
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-around'
+depends = ['ddc.vim']
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-source-lsp'
+depends = ['ddc.vim']
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'uga-rosa/ddc-source-vsnip'
+depends = ['ddc.vim']
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-cmdline'
+depends = ['ddc.vim']
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-cmdline-history'
+depends = ['ddc.vim']
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'uga-rosa/ddc-source-lsp-setup'
+depends = ['ddc.vim']
+on_source = ['ddc-source-lsp', 'ddc.vim']
