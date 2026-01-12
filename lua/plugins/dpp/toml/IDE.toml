@@ -8,10 +8,16 @@ repo = 'mhinz/vim-startify'
 hook_source = 'source $XDG_CONFIG_HOME/nvim/plugins/hooks/startify.vim'
 on_event = 'BufEnter'
 
-# プロジェクトルートがGitリポジトリ配下となるように移動する
+# プロジェクトルートに移動する
 [[plugins]]
 repo = 'airblade/vim-rooter'
 hook_source = 'source $XDG_CONFIG_HOME/nvim/plugins/hooks/vim-rooter.vim'
+on_event = 'BufEnter'
+
+# Scroll Bar
+[[plugins]]
+repo = 'petertriho/nvim-scrollbar'
+hook_source = 'source $XDG_CONFIG_HOME/nvim/plugins/hooks/nvim-scrollbar.lua'
 on_event = 'BufEnter'
 
 # Status Line
@@ -25,8 +31,3 @@ on_event = 'BufEnter'
 repo = 'mengelbrecht/lightline-bufferline'
 on_source = 'lightline.vim'
 
-# Scroll Bar
-[[plugins]]
-repo = 'petertriho/nvim-scrollbar'
-hook_source = 'source $XDG_CONFIG_HOME/nvim/plugins/hooks/nvim-scrollbar.lua'
-on_event = 'BufEnter'

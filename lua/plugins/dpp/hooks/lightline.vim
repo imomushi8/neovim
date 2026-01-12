@@ -1,7 +1,7 @@
 let g:lightline#bufferline#enable_devicons = 1
 let g:lightline = {
 \ 'enable': {
-\   'statusline': 1, 
+\   'statusline': 1,
 \   'tabline': 1,
 \ },
 \ 'colorscheme': 'catppuccin',

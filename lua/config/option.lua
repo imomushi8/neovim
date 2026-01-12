@@ -40,6 +40,7 @@ vim.opt.laststatus = 2
 vim.opt.showtabline = 2
 vim.opt.list = true
 vim.opt.listchars:append({ tab = "^\\ " })
+vim.opt.termguicolors = true
 
 vim.cmd("hi Constant ctermfg=14")
 vim.cmd("hi clear CursorLine")

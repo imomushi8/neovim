@@ -21,22 +21,22 @@ augroup vim_rooter_settings
   autocmd BufRead *.py                call VimRooterPython()
 augroup END
 
-function! VimRooterGit() 
+function! VimRooterGit()
   let g:rooter_patterns = ['.git']
   Rooter
 endfunction
 
-function! VimRooterScala() 
+function! VimRooterScala()
   let g:rooter_patterns = ['build.sbt']
   Rooter
 endfunction
 
-function! VimRooterRust() 
+function! VimRooterRust()
   let g:rooter_patterns = ['Cargo.toml']
   Rooter
 endfunction
 
-function! VimRooterPython() 
+function! VimRooterPython()
   let g:rooter_patterns = ['.git']
   Rooter
 endfunction

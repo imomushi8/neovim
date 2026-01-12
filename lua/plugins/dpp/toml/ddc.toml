@@ -4,8 +4,7 @@
 
 [[plugins]]
 repo = 'Shougo/pum.vim'
-depends = ['denops.vim']
-on_event = 'BufEnter'
+on_source = 'denops.vim'
 
 ###################################################
 # ddc
@@ -69,3 +68,6 @@ on_source = 'ddc.vim'
 repo = 'uga-rosa/ddc-source-lsp-setup'
 depends = ['ddc.vim']
 on_source = ['ddc-source-lsp', 'ddc.vim']
+hook_source = '''
+require("ddc_source_lsp_setup").setup()
+'''

@@ -4,8 +4,7 @@
 
 [[plugins]]
 repo = 'Shougo/ddu.vim'
-depends = ['denops.vim']
-on_event = 'BufEnter'
+on_source = 'denops.vim'
 
 ###### ui(filer) ######
 [[plugins]]

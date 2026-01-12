@@ -11,10 +11,6 @@ local function initialize()
   vim.g.base_dir    = vim.fs.joinpath(vim.env.XDG_CONFIG_HOME, vim.g.nvim_appname)
   vim.g.snippet_dir = vim.fs.joinpath(vim.g.base_dir, "snippets")
   vim.g.rc_dir      = vim.fs.joinpath(vim.g.base_dir, "rc")
-  vim.g.hooks_dir   = vim.fs.joinpath(vim.g.base_dir, "plugins", "hooks")
-  vim.g.toml_dir    = vim.fs.joinpath(vim.g.base_dir, "plugins", "toml")
-  vim.env.BASE_DIR  = vim.g.base_dir
-  vim.env.HOOKS_DIR = vim.g.hooks_dir
 
   -- 実行環境取得
   if vim.g.vscode then

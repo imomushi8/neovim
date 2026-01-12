@@ -58,7 +58,7 @@ export class Config extends BaseConfig {
 
     const tomls = await gatherTomls(
       await vars.globals.get(denops, "toml_dir"),
-      ["dpp.toml", "no_lazy.toml"],
+      ["dependencies.toml", "helper.toml"],
       args,
     ) as Toml[];
 
