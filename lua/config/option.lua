@@ -14,6 +14,7 @@ vim.opt.undofile = false
 vim.opt.modifiable = true
 vim.opt.compatible = false
 -- vim.opt.autochdir = true
+vim.opt.clipboard:append{'unnamedplus'}
 
 --------------------------------
 -- エディタ設定

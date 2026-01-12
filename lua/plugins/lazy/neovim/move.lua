@@ -6,18 +6,20 @@ return {
       vim.g.camelcasemotion_key = "<leader>"
     end,
     keys = {
-      { "w",  "<Plug>CamelCaseMotion_w",  { silent = true } },
-      { "b",  "<Plug>CamelCaseMotion_b",  { silent = true } },
-      { "e",  "<Plug>CamelCaseMotion_e",  { silent = true } },
-      { "ge", "<Plug>CamelCaseMotion_ge", { silent = true } },
+      { "w",  "<Plug>CamelCaseMotion_w",  mode = {"n", "v"}, silent = true },
+      { "b",  "<Plug>CamelCaseMotion_b",  mode = {"n", "v"}, silent = true },
+      { "e",  "<Plug>CamelCaseMotion_e",  mode = {"n", "v"}, silent = true },
+      { "ge", "<Plug>CamelCaseMotion_ge", mode = {"n", "v"}, silent = true },
     }
   },
   {
     "haya14busa/vim-edgemotion",
     lazy = false,
     keys = {
-      { "<C-j>", "<Plug>(edgemotion-j)" },
-      { "<C-k>", "<Plug>(edgemotion-k)" },
+      { "J", "<Plug>(edgemotion-j)", mode = {"n", "v"}},
+      { "K", "<Plug>(edgemotion-k)", mode = {"n", "v"}},
+      { "H", "^", mode = {"n", "v"}},
+      { "L", "$", mode = {"n", "v"}},
     },
   },
   {
