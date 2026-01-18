@@ -62,3 +62,21 @@ map('n', '<leader><space>', ':nohlsearch<CR>', { noremap = true, silent = true }
 -- カーソル下の単語置換
 map('n', '<leader>g', ':%s/<C-r><C-w>//g<Left><Left>', { noremap = true })
 
+--------------------------------
+-- LSP系
+--------------------------------
+map('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', , { noremap = true, silent = true })
+map('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', , { noremap = true, silent = true })
+map('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', , { noremap = true, silent = true })
+
+-- lsp
+vim.api.nvim_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', { noremap = true, silent = true })
+map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', { noremap = true, silent = true }s)
+map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', { noremap = true, silent = true })
+map('n', 'gy', '<cmd>lua vim.lsp.buf.type_definition()<CR>', { noremap = true, silent = true })
+map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', { noremap = true, silent = true })
+map('n', 'K',  '<cmd>lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })
+map('n', 'gh', '<cmd>lua vim.lsp.buf.signature_help()<CR>', { noremap = true, silent = true })
+map('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', { noremap = true, silent = true })
+map('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', { noremap = true, silent = true })
